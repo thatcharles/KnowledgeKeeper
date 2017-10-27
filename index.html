@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IoX Knowledge Keeper</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" id="camera-css"  href="css/camera.css" type="text/css" media="all">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/skins/tango/skin.css" />
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->    
+</head>
+
+<body>
+    <div class="page_container">
+        <div class="warp video" align="center">
+            <div class="span5">
+                <div class="image">
+                    <img src="img/one.png" alt="no picture">
+                </div>
+            </div>
+
+            <div id="player" width="620"></div>
+            <script>
+                var tag = document.createElement('script');
+
+                tag.src = "https://www.youtube.com/iframe_api";
+                var firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                var player;
+
+                function commands(text)
+                {
+                    if(player!=null)
+                    {
+                        
+                        player.seekTo(parseInt(text),true);
+                        /*
+                        switch(text)
+                        {
+                            case 'playVideo':player.playVideo();break;
+                            case 'pauseVideo':player.pauseVideo();break;
+                            case 'stopVideo':player.stopVideo();break;
+                            case "getStatus":player.getPlayerState();break;
+                        }*/
+                    }
+                }
+
+                function onYouTubeIframeAPIReady() {
+                    player = new YT.Player('player', {
+                        height: '315',
+                        width: '560',
+                        videoId: 'bBXBs5At6Xo',
+                        playerVars: {'controls': 1 },
+                        events: {
+                        'onReady': onPlayerReady,
+                        }
+                    });
+                }
+                
+                function onPlayerReady(event) {
+                    event.target.playVideo();
+                }
+            </script>
+
+        </div>
+        
+        <div class="wrap planning">
+            <div class="container">
+                <div onclick="commands('30')" class="span1x" >
+                    <img src="img/procedural/step3-2.png" width="150" height="150" alt="no picture" hspace="0">
+                </div>
+            </div>
+        </div>
+        <div class="wrap planning">
+            <div class="container">
+                    <div onclick="commands('10')" class="span2">
+                            <img src="img/procedural/step1.png" width="150" height="150" alt="no picture" hspace="0">
+                    </div>
+                    <div onclick="commands('30')" class="span1">
+                            <img src="img/procedural/step2.png" width="100" height="150" alt="no picture">
+                            <span class="link_title"></span>
+                    </div>
+                    <div onclick="commands('60')" class="span2">
+                                <img src="img/procedural/step3-1.png" width="150" height="150" alt="no picture">
+                            <span class="link_title"></span>
+                    </div>
+                    <div onclick="commands('90')" class="span1">
+                            <img src="img/procedural/step4.png" width="100" height="150" alt="no picture" >
+                            <span class="link_title"></span>
+                    </div>
+                    <div onclick="commands('120')" class="span2">
+                            <img src="img/procedural/step5.png" width="150" height="150" alt="no picture">
+                            <span class="link_title"></span>
+                    </div>
+                    <div onclick="commands('150')" class="span3">
+                            <img src="img/procedural/step6.png" alt="no picture">
+                            <span class="link_title"></span>
+                    </div>
+                    <!--div onclick="commands('180')" class="span1">
+                            <img src="img/procedural/step7.png" width="150" height="150" alt="no picture">
+                            <span class="link_title"></span>
+                    </div>
+                    <div class="span2">
+                        <a href="#">
+                            <img src="img/procedural/step8.png" alt="no picture">
+                            <span class="link_title"></span>
+                        </a>
+                    </div-->                          
+            </div>
+        </div>
+        <div class="wrap planning">
+            <div class="container" margin-right="auto">
+                <div class="span2x">
+                            <img src="img/procedural/timelinePics.png" alt="no picture" width="1050" hspace="0">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</!DOCTYPE html>
+</html>
