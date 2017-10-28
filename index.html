@@ -1,96 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>IoX Knowledge Explore</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>IoX Knowledge Explore</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
-<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" id="camera-css"  href="css/camera.css" type="text/css" media="all">
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/theme.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/skins/tango/skin.css" />
-<link rel="stylesheet" href="Semantic-UI-CSS/semantic.css" />
-<link href="css/bootstrap-responsive.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->    
-</head>
-
-<body>
-    <div class="page_container">
-        <div class="warp video" align="center">
-            <div class="span5">
-                <div class="image">
-                    <img src="img/one.png" alt="no picture">
-                </div>
-            </div>
-
-            <div id="player" width="620"></div>
-            <script>
-                var tag = document.createElement('script');
-
-                tag.src = "https://www.youtube.com/iframe_api";
-                var firstScriptTag = document.getElementsByTagName('script')[0];
-                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-                var player;
-
-                function commands(text)
-                {
-                    if(player!=null)
-                    {
-                        
-                        player.seekTo(parseInt(text),true);
-                        /*
-                        switch(text)
-                        {
-                            case 'playVideo':player.playVideo();break;
-                            case 'pauseVideo':player.pauseVideo();break;
-                            case 'stopVideo':player.stopVideo();break;
-                            case "getStatus":player.getPlayerState();break;
-                        }*/
-                    }
-                }
-
-                function onYouTubeIframeAPIReady() {
-                    player = new YT.Player('player', {
-                        height: '315',
-                        width: '560',
-                        videoId: 'bBXBs5At6Xo',
-                        playerVars: {'controls': 1 },
-                        events: {
-                        'onReady': onPlayerReady,
-                        }
-                    });
-                }
-                
-                function onPlayerReady(event) {
-                    event.target.playVideo();
-                }
-            </script>
-        </div>
-
-        <style >
-        </style>
-
-        <script type="text/javascript">
+  <link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" id="camera-css"  href="css/camera.css" type="text/css" media="all">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/skins/tango/skin.css" />
+  <link rel="stylesheet" href="Semantic-UI-CSS/semantic.css" />
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  </head>
+  <script type="text/javascript">
             var currentStep = '1';
             function setStepStatus(step,state){
                 
                 if(state == 'achieve'){
-                    if(parseInt(step) == 6){
+                    if(parseInt(step) == 9){
                         document.getElementById('test'+ step).className = "completed step";
                         return;
                     }
+                    currentStep = (parseInt(currentStep)+1).toString();
                     var nextStep = parseInt(step)+1;
                     document.getElementById('test'+ step).className = "completed step";
                 }else if(state == 'backward'){
+                  currentStep = (parseInt(currentStep)-1).toString();
                     var nextStep = parseInt(step)-1;
                     document.getElementById('test'+ step).className = "step";
                 }
@@ -102,16 +43,104 @@
             $(document).bind('keydown', function(e){
                 if(e.keyCode === 32 || e.keyCode === 39){
                     $("#test"+currentStep).click();
-                    currentStep = (parseInt(currentStep)+1).toString();
+                    //currentStep = (parseInt(currentStep)+1).toString();
                 }else if(e.keyCode === 37){
                     $("#test"+currentStep).dblclick();
-                    currentStep = (parseInt(currentStep)-1).toString();
+                    //currentStep = (parseInt(currentStep)-1).toString();
                 }
             });
         </script>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3db0c3;">
+      <a class="navbar-brand" href="#">Knowledge Explore</a>
+    </nav>
+    <div class='container' style='padding-top:50px'>
+      <div class='row'>
+        <div class='col'> 
+          <div class='card'>
+            <div class='card-body'>
+              <h5 class='card-title center'>Before we cook an Omlette let's prepare</h5>
+                <div class='row'>
+                  <div class='col'>
+                    <ul class="list-group">
+                    <li class="list-group-item" style="background-color:aliceblue">Tools</li>
+                    <!-- list tools beneath -->
+                    <li class="list-group-item">
+                      <div class="square-icon" style='background-color:lightsalmon'></div> Non-stick pans
+                    </li>
+                    <li class="list-group-item"><div class="square-icon" style='background-color:lightpink'></div> Plate</li>
+                    <li class="list-group-item"><div class="square-icon" style='background-color:lightgoldenrodyellow'></div> Bowl</li>
+                  </ul>
+                  </div>
+                  <div class='col'>
+                    <ul class="list-group">
+                      <li class="list-group-item" style="background-color:aliceblue">Ingredients</li>
+                      <li class="list-group-item">Eggs: 2</li>
+                      <li class="list-group-item">Salt: few amount</li>
+                      <li class="list-group-item">Butter: a spoon</li>
+                  </div>
+               </div>
+            </div>
+          </div>
+        </div>
+        <div class='col video'> 
+          <!-- video player -->
+          <!-- use carousel slide to display multiple videos -->
+          <div id="player" width="620"></div>
+                <script>
+                    var tag = document.createElement('script');
+
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    var firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                    var player;
+
+                    function commands(text)
+                    {
+                        if(player!=null)
+                        {
+                            //player.seekTo(parseInt(text),true);
+                            switch(text)
+                            {
+                              case 'nextVideo':player.nextVideo();break;
+                                case 'previousVideo':player.previousVideo();break;
+                                case 'playVideo':player.playVideo();break;
+                                case 'pauseVideo':player.pauseVideo();break;
+                                case 'stopVideo':player.stopVideo();break;
+                                case "getStatus":player.getPlayerState();break;
+                            }
+                        }
+                    }
+
+                    function onYouTubeIframeAPIReady() {
+                        player = new YT.Player('player', {
+                            height: '315',
+                            width: '560',
+                            //videoId: 'bBXBs5At6Xo',
+                            playerVars: {
+                              'controls': 1,
+                              listType:'playlist',
+                              list:'PL7-jPKtc4r78-wCZcQn5IqyuWhBZ8fOxT',
+                              index:parseInt(0),
+                          },
+                            events: {
+                            'onReady': onPlayerReady,
+                            }
+                        });
+                    }
+                    
+                    function onPlayerReady(event) {
+                        event.target.playVideo();
+                    }
+                </script>
+        </div>
+
+      </div>
+      <div class='row' style='height:300px'> <!-- delete height constraint after implementation ready -->
         
-        <div class="wrap planning">
-            <div class="container">
+        <!-- display the main steps here -->
+        <div class="container">
                 <div class="ui six top attached ordered steps">
                   <div class="active step" id="test1" onclick="setStepStatus('1','achieve')">
                     <i class="truck icon"></i>
@@ -156,25 +185,23 @@
                     </div>
                   </div>
                 </div>
-                <div class="ui attached segment">
-                  <p>this is the attached segment</p>
-                </div>
+                
                 <div class="ui three bottom attached steps">
-                  <div class="step">
+                  <div class="step" id="test7" onclick="setStepStatus('7','achieve')" ondblclick="setStepStatus('7','backward')">
                     <i class="truck icon"></i>
                     <div class="content">
                       <div class="title">Shipping</div>
                       <div class="description">Choose your shipping options</div>
                     </div>
                   </div>
-                  <div class="active step">
+                  <div class="step" id="test8" onclick="setStepStatus('8','achieve')" ondblclick="setStepStatus('8','backward')">
                     <i class="browser icon"></i>
                     <div class="content">
                       <div class="title">Billing</div>
                       <div class="description">Enter billing information</div>
                     </div>
                   </div>
-                  <div class="disabled step">
+                  <div class="step" id="test9" onclick="setStepStatus('9','achieve')" ondblclick="setStepStatus('9','backward')">
                     <i class="info icon"></i>
                     <div class="content">
                       <div class="title">Confirm Order</div>
@@ -182,9 +209,26 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="ui attached segment">
+                  <p>this is the attached segment</p>
+                </div>
+
             </div>
+      </div>
+      <div class='row justify-content-md-center'>
+        <div class='column'>
+          <button class="ui labeled icon button" onclick="setStepStatus(currentStep,'backward')"><i class="chevron left icon"></i>Previous Step</button>
+          <button class="ui labeled icon button" onclick="setStepStatus(currentStep,'achieve')"><i class="chevron right icon"></i>Next Step</button>
+          <button class="ui labeled icon button" onclick="commands('previousVideo')"><i class="backward icon"></i>Previous Expert</button>
+          <button class="ui labeled icon button" onclick="commands('nextVideo')"><i class="forward icon"></i>Next Expert</button>
         </div>
+      </div>
     </div>
-</body>
-</!DOCTYPE html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </body>
 </html>
