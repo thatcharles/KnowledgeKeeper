@@ -14,7 +14,9 @@
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/theme.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/skins/tango/skin.css" />
+<link rel="stylesheet" href="Semantic-UI-CSS/semantic.css" />
 <link href="css/bootstrap-responsive.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->    
@@ -72,61 +74,116 @@
                     event.target.playVideo();
                 }
             </script>
-
         </div>
+
+        <style >
+        </style>
+
+        <script type="text/javascript">
+            var currentStep = '1';
+            function setStepStatus(step,state){
+                
+                if(state == 'achieve'){
+                    if(parseInt(step) == 6){
+                        document.getElementById('test'+ step).className = "completed step";
+                        return;
+                    }
+                    var nextStep = parseInt(step)+1;
+                    document.getElementById('test'+ step).className = "completed step";
+                }else if(state == 'backward'){
+                    var nextStep = parseInt(step)-1;
+                    document.getElementById('test'+ step).className = "step";
+                }
+                document.getElementById('test'+ nextStep.toString()).className = "active step";
+
+            }
+        </script>
+        <script>
+            $(document).bind('keydown', function(e){
+                if(e.keyCode === 32 || e.keyCode === 39){
+                    $("#test"+currentStep).click();
+                    currentStep = (parseInt(currentStep)+1).toString();
+                }else if(e.keyCode === 37){
+                    $("#test"+currentStep).dblclick();
+                    currentStep = (parseInt(currentStep)-1).toString();
+                }
+            });
+        </script>
         
         <div class="wrap planning">
             <div class="container">
-                <div onclick="commands('30')" class="span1x" >
-                    <img src="img/procedural/step3-2.png" width="150" height="150" alt="no picture" hspace="0">
+                <div class="ui six top attached ordered steps">
+                  <div class="active step" id="test1" onclick="setStepStatus('1','achieve')">
+                    <i class="truck icon"></i>
+                    <div class="content">
+                      <div class="title">Shipping</div>
+                      <div class="description">Choose your shipping options</div>
+                    </div>
+                  </div>
+                  <div class="step" id="test2" onclick="setStepStatus('2','achieve')" ondblclick="setStepStatus('2','backward')">
+                    <i class="payment icon"></i>
+                    <div class="content">
+                      <div class="title">Billing</div>
+                      <div class="description">Enter billing information</div>
+                    </div>
+                  </div>
+                  <div class="step" id="test3" onclick="setStepStatus('3','achieve')" ondblclick="setStepStatus('3','backward')">
+                    <i class="info icon"></i>
+                    <div class="content">
+                      <div class="title">Confirm Order</div>
+                      <div class="description">Verify order details</div>
+                    </div>
+                  </div>
+                  <div class="step" id="test4" onclick="setStepStatus('4','achieve')" ondblclick="setStepStatus('4','backward')">
+                    <i class="truck icon"></i>
+                    <div class="content">
+                      <div class="title">Shipping</div>
+                      <div class="description">Choose your shipping options</div>
+                    </div>
+                  </div>
+                  <div class="step" id="test5" onclick="setStepStatus('5','achieve')" ondblclick="setStepStatus('5','backward')">
+                    <i class="truck icon"></i>
+                    <div class="content">
+                      <div class="title">Shipping</div>
+                      <div class="description">Choose your shipping options</div>
+                    </div>
+                  </div>
+                  <div class="step" id="test6" onclick="setStepStatus('6','achieve')" ondblclick="setStepStatus('6','backward')">
+                    <i class="truck icon"></i>
+                    <div class="content">
+                      <div class="title">Shipping</div>
+                      <div class="description">Choose your shipping options</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui attached segment">
+                  <p>this is the attached segment</p>
+                </div>
+                <div class="ui three bottom attached steps">
+                  <div class="step">
+                    <i class="truck icon"></i>
+                    <div class="content">
+                      <div class="title">Shipping</div>
+                      <div class="description">Choose your shipping options</div>
+                    </div>
+                  </div>
+                  <div class="active step">
+                    <i class="browser icon"></i>
+                    <div class="content">
+                      <div class="title">Billing</div>
+                      <div class="description">Enter billing information</div>
+                    </div>
+                  </div>
+                  <div class="disabled step">
+                    <i class="info icon"></i>
+                    <div class="content">
+                      <div class="title">Confirm Order</div>
+                      <div class="description">Verify order details</div>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
-        <div class="wrap planning">
-            <div class="container">
-                    <div onclick="commands('10')" class="span2">
-                            <img src="img/procedural/step1.png" width="150" height="150" alt="no picture" hspace="0">
-                    </div>
-                    <div onclick="commands('30')" class="span1">
-                            <img src="img/procedural/step2.png" width="100" height="150" alt="no picture">
-                            <span class="link_title"></span>
-                    </div>
-                    <div onclick="commands('60')" class="span2">
-                                <img src="img/procedural/step3-1.png" width="150" height="150" alt="no picture">
-                            <span class="link_title"></span>
-                    </div>
-                    <div onclick="commands('90')" class="span1">
-                            <img src="img/procedural/step4.png" width="100" height="150" alt="no picture" >
-                            <span class="link_title"></span>
-                    </div>
-                    <div onclick="commands('120')" class="span2">
-                            <img src="img/procedural/step5.png" width="150" height="150" alt="no picture">
-                            <span class="link_title"></span>
-                    </div>
-                    <div onclick="commands('150')" class="span3">
-                            <img src="img/procedural/step6.png" alt="no picture">
-                            <span class="link_title"></span>
-                    </div>
-                    <!--div onclick="commands('180')" class="span1">
-                            <img src="img/procedural/step7.png" width="150" height="150" alt="no picture">
-                            <span class="link_title"></span>
-                    </div>
-                    <div class="span2">
-                        <a href="#">
-                            <img src="img/procedural/step8.png" alt="no picture">
-                            <span class="link_title"></span>
-                        </a>
-                    </div-->                          
-            </div>
-        </div>
-        <div class="wrap planning">
-            <div class="container" margin-right="auto">
-                <div class="span2x">
-                            <img src="img/procedural/timelinePics.png" alt="no picture" width="1050" hspace="0">
-                </div>
-            </div>
-        </div>
-
     </div>
 </body>
 </!DOCTYPE html>

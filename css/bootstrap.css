@@ -561,8 +561,8 @@ a:hover { text-decoration: underline;
 }
 
 .container {
-  margin-right: 0;
-  margin-left: 0;
+  margin-right: auto;
+  margin-left: auto;
   *zoom: 1;
 }
 
