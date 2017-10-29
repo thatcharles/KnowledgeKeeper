@@ -16,40 +16,71 @@
   <link rel="stylesheet" href="Semantic-UI-CSS/semantic.css" />
   <link href="css/bootstrap-responsive.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  
+  <!--script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js""></script-->
   </head>
   <script type="text/javascript">
-            var currentStep = '1';
-            function setStepStatus(step,state){
-                
-                if(state == 'achieve'){
-                    if(parseInt(step) == 9){
-                        document.getElementById('test'+ step).className = "completed step";
-                        return;
-                    }
-                    currentStep = (parseInt(currentStep)+1).toString();
-                    var nextStep = parseInt(step)+1;
-                    document.getElementById('test'+ step).className = "completed step";
-                }else if(state == 'backward'){
-                  currentStep = (parseInt(currentStep)-1).toString();
-                    var nextStep = parseInt(step)-1;
-                    document.getElementById('test'+ step).className = "step";
-                }
-                document.getElementById('test'+ nextStep.toString()).className = "active step";
+    var currentStep = '1';
+    function setStepStatus(step,state){
 
-            }
-        </script>
-        <script>
-            $(document).bind('keydown', function(e){
-                if(e.keyCode === 32 || e.keyCode === 39){
-                    $("#test"+currentStep).click();
-                    //currentStep = (parseInt(currentStep)+1).toString();
-                }else if(e.keyCode === 37){
-                    $("#test"+currentStep).dblclick();
-                    //currentStep = (parseInt(currentStep)-1).toString();
-                }
-            });
-        </script>
+      if(state == 'achieve'){
+        if(parseInt(step) == 10){
+          document.getElementById('test'+ step).className = "completed step";
+          return;
+        }
+        currentStep = (parseInt(step)+1).toString();
+        var nextStep = parseInt(currentStep);
+        document.getElementById('test'+ step).className = "completed step";
+      }else if(state == 'backward'){
+        currentStep = (parseInt(step)-1).toString();
+        var nextStep = parseInt(currentStep);
+        document.getElementById('test'+ step).className = "step";
+      }
+      document.getElementById('test'+ nextStep.toString()).className = "active step";
+
+      /*
+      * use array to encode which tools or ingredients do we need(1) or not(0). 
+      */
+      switch(currentStep)
+      {
+        case '1': break;
+        case '2': setinfo('what should we prepare for heatting the pot',[0,0,0],[0,0,0]);break;
+        case '3': setinfo('what should we prepare for beating the egg',[1,0,0],[1,0,0]);break;
+        case '4': setinfo('what should we prepare for adding salt',[1,0,0],[0,1,0]);break;
+        case '5': setinfo('what should we prepare for adding butter',[1,0,1],[0,0,1]);break;
+        case "6": setinfo('what should we prepare for oiling the pan',[1,0,0],[0,0,0]);break;
+        case "7": setinfo('what should we prepare for pouring the egg',[1,1,1],[1,0,0]);break;
+        case "8": setinfo('what should we prepare for sauting',[1,0,0],[1,1,0]);break;
+        case "9": setinfo('what should we prepare for leaving the pan from fire',[1,0,0],[1,1,1]);break;
+        case "10": setinfo('what should we prepare for plating the omelette',[1,0,1],[1,1,1]);break;
+        default: '1';
+      }
+    }
+
+    function setinfo(title,Tools,Ingredients){
+      document.getElementById('card-title').innerHTML = title;
+      $(".item").hide();
+      var i;
+      for (i = 0; i < Tools.length; i++) { 
+        if(Tools[i] == 1){
+          $("#tool"+(i+1).toString()).show();
+        }
+      }
+      for(i=0; i < Ingredients.length; i++){
+        if(Ingredients[i] == 1){
+          $("#Ingre"+(i+1).toString()).show();
+        }
+      }
+    }
+  </script>
+  <script>
+    $(document).bind('keydown', function(e){
+      if(e.keyCode === 32 || e.keyCode === 39){
+        $("#test"+currentStep).click();
+      }else if(e.keyCode === 37){
+        $("#test"+currentStep).dblclick();
+      }
+    });
+  </script>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3db0c3;">
       <a class="navbar-brand" href="#">Knowledge Explore</a>
@@ -59,25 +90,26 @@
         <div class='col'> 
           <div class='card'>
             <div class='card-body'>
-              <h5 class='card-title center'>Before we cook an Omlette let's prepare</h5>
+              <h5 class='card-title center' id="card-title">Before we cook an Omlette let's prepare</h5>
                 <div class='row'>
                   <div class='col'>
                     <ul class="list-group">
                     <li class="list-group-item" style="background-color:aliceblue">Tools</li>
                     <!-- list tools beneath -->
-                    <li class="list-group-item">
-                      <div class="square-icon" style='background-color:lightsalmon'></div> Non-stick pans
-                    </li>
-                    <li class="list-group-item"><div class="square-icon" style='background-color:lightpink'></div> Plate</li>
-                    <li class="list-group-item"><div class="square-icon" style='background-color:lightgoldenrodyellow'></div> Bowl</li>
+                    <!--
+                      tools and ingredients have their own id corresspond to the array encoding in setStepStatus()
+                    -->
+                    <li class="list-group-item item" id="tool1"><div class="square-icon" style='background-color:lightsalmon'></div> Non-stick pans</li>
+                    <li class="list-group-item item" id="tool2"><div class="square-icon" style='background-color:lightpink'></div> Plate</li>
+                    <li class="list-group-item item" id="tool3"><div class="square-icon" style='background-color:lightgoldenrodyellow'></div> Bowl</li>
                   </ul>
                   </div>
                   <div class='col'>
                     <ul class="list-group">
                       <li class="list-group-item" style="background-color:aliceblue">Ingredients</li>
-                      <li class="list-group-item">Eggs: 2</li>
-                      <li class="list-group-item">Salt: few amount</li>
-                      <li class="list-group-item">Butter: a spoon</li>
+                      <li class="list-group-item item" id="Ingre1">Eggs: 2</li>
+                      <li class="list-group-item item" id="Ingre2">Salt: few amount</li>
+                      <li class="list-group-item item" id="Ingre3">Butter: a spoon</li>
                   </div>
                </div>
             </div>
@@ -138,83 +170,88 @@
 
       </div>
       <div class='row' style='height:300px'> <!-- delete height constraint after implementation ready -->
-        
         <!-- display the main steps here -->
-        <div class="container">
-                <div class="ui six top attached ordered steps">
-                  <div class="active step" id="test1" onclick="setStepStatus('1','achieve')">
-                    <i class="truck icon"></i>
-                    <div class="content">
-                      <div class="title">Shipping</div>
-                      <div class="description">Choose your shipping options</div>
-                    </div>
-                  </div>
-                  <div class="step" id="test2" onclick="setStepStatus('2','achieve')" ondblclick="setStepStatus('2','backward')">
-                    <i class="payment icon"></i>
-                    <div class="content">
-                      <div class="title">Billing</div>
-                      <div class="description">Enter billing information</div>
-                    </div>
-                  </div>
-                  <div class="step" id="test3" onclick="setStepStatus('3','achieve')" ondblclick="setStepStatus('3','backward')">
-                    <i class="info icon"></i>
-                    <div class="content">
-                      <div class="title">Confirm Order</div>
-                      <div class="description">Verify order details</div>
-                    </div>
-                  </div>
-                  <div class="step" id="test4" onclick="setStepStatus('4','achieve')" ondblclick="setStepStatus('4','backward')">
-                    <i class="truck icon"></i>
-                    <div class="content">
-                      <div class="title">Shipping</div>
-                      <div class="description">Choose your shipping options</div>
-                    </div>
-                  </div>
-                  <div class="step" id="test5" onclick="setStepStatus('5','achieve')" ondblclick="setStepStatus('5','backward')">
-                    <i class="truck icon"></i>
-                    <div class="content">
-                      <div class="title">Shipping</div>
-                      <div class="description">Choose your shipping options</div>
-                    </div>
-                  </div>
-                  <div class="step" id="test6" onclick="setStepStatus('6','achieve')" ondblclick="setStepStatus('6','backward')">
-                    <i class="truck icon"></i>
-                    <div class="content">
-                      <div class="title">Shipping</div>
-                      <div class="description">Choose your shipping options</div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="ui three bottom attached steps">
-                  <div class="step" id="test7" onclick="setStepStatus('7','achieve')" ondblclick="setStepStatus('7','backward')">
-                    <i class="truck icon"></i>
-                    <div class="content">
-                      <div class="title">Shipping</div>
-                      <div class="description">Choose your shipping options</div>
-                    </div>
-                  </div>
-                  <div class="step" id="test8" onclick="setStepStatus('8','achieve')" ondblclick="setStepStatus('8','backward')">
-                    <i class="browser icon"></i>
-                    <div class="content">
-                      <div class="title">Billing</div>
-                      <div class="description">Enter billing information</div>
-                    </div>
-                  </div>
-                  <div class="step" id="test9" onclick="setStepStatus('9','achieve')" ondblclick="setStepStatus('9','backward')">
-                    <i class="info icon"></i>
-                    <div class="content">
-                      <div class="title">Confirm Order</div>
-                      <div class="description">Verify order details</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="ui attached segment">
-                  <p>this is the attached segment</p>
-                </div>
-
+        <div class="ui ten top attached ordered steps">
+          <div class="active step" id="test1" onclick="setStepStatus('1','achieve')">
+            <div class="content">
+              <div class="title">how to cook an omelette</div>
+              <!--div class="description">Choose your shipping options</div-->
             </div>
+          </div>
+          <div class="step" id="test2" onclick="setStepStatus('2','achieve')" ondblclick="setStepStatus('2','backward')">
+            <div class="content">
+              <div class="title">Heat the pot</div>
+            </div>
+          </div>
+          <div class="step" id="test3" onclick="setStepStatus('3','achieve')" ondblclick="setStepStatus('3','backward')">
+            <div class="content">
+              <div class="title">Beat the egg</div>
+            </div>
+          </div>
+          <div class="step" id="test4" onclick="setStepStatus('4','achieve')" ondblclick="setStepStatus('4','backward')">
+            <div class="content">
+              <div class="title">Add salt</div>
+            </div>
+          </div>
+          <div class="step" id="test5" onclick="setStepStatus('5','achieve')" ondblclick="setStepStatus('5','backward')">
+            <div class="content">
+              <div class="title">Add a spoon of butter</div>
+            </div>
+          </div>
+          <div class="step" id="test6" onclick="setStepStatus('6','achieve')" ondblclick="setStepStatus('6','backward')">
+            <div class="content">
+              <div class="title">oil the pen</div>
+            </div>
+          </div>
+          <div class="step" id="test7" onclick="setStepStatus('7','achieve')" ondblclick="setStepStatus('7','backward')">
+            <div class="content">
+              <div class="title">Pour the egg</div>
+            </div>
+          </div>
+          <div class="step" id="test8" onclick="setStepStatus('8','achieve')" ondblclick="setStepStatus('8','backward')">
+            <div class="content">
+              <div class="title">To saute</div>
+            </div>
+          </div>
+          <div class="step" id="test9" onclick="setStepStatus('9','achieve')" ondblclick="setStepStatus('9','backward')">
+            <div class="content">
+              <div class="title">Leave the pan from fire</div>
+            </div>
+          </div>
+          <div class="step" id="test10" onclick="setStepStatus('10','achieve')" ondblclick="setStepStatus('10','backward')">
+            <div class="content">
+              <div class="title">Put the omelette on the plate</div>
+            </div>
+          </div>
+        </div>
+
+        <!--div class="ui three bottom attached steps">
+          <div class="step" id="test7" onclick="setStepStatus('11','achieve')" ondblclick="setStepStatus('11','backward')">
+            <i class="truck icon"></i>
+            <div class="content">
+              <div class="title">Shipping</div>
+              <div class="description">Choose your shipping options</div>
+            </div>
+          </div>
+          <div class="step" id="test8" onclick="setStepStatus('12','achieve')" ondblclick="setStepStatus('12','backward')">
+            <i class="browser icon"></i>
+            <div class="content">
+              <div class="title">Billing</div>
+              <div class="description">Enter billing information</div>
+            </div>
+          </div>
+          <div class="step" id="test9" onclick="setStepStatus('13','achieve')" ondblclick="setStepStatus('13','backward')">
+            <i class="info icon"></i>
+            <div class="content">
+              <div class="title">Confirm Order</div>
+              <div class="description">Verify order details</div>
+            </div>
+          </div>
+        </div-->
+
+        <div class="ui attached segment">
+          <p>to load the photo of current work</p>
+        </div>     
       </div>
       <div class='row justify-content-md-center'>
         <div class='column'>
