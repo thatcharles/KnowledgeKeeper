@@ -27,6 +27,12 @@
         maxRating: 5
       });
 
+      $('.popup-modal').click(function() {
+        /*
+        * To do: add respective second layer content here
+        */
+      });
+
       $('.popup-modal').magnificPopup({
         type: 'inline',
         preloader: false,
@@ -36,9 +42,10 @@
         enableEscapeKey: 'false',
         closeBtnInside: true,
         fixedContentPos: true,
-        alignTop: true,
+        alignTop: false,
         //modal: true,
       });
+
 
     });
   </script>
@@ -70,7 +77,7 @@
       */
       switch(currentStep)
       {
-        case '1': break;
+        case '1': setinfo('Before we cook an Omlette let\'s prepare',[1,1,1],[1,1,1]);break;
         case '2': setinfo('what should we prepare for heatting the pot',[0,0,0],[0,0,0]);break;
         case '3': setinfo('what should we prepare for beating the egg',[1,0,0],[1,0,0]);break;
         case '4': setinfo('what should we prepare for adding salt',[1,0,0],[0,1,0]);break;
@@ -233,7 +240,7 @@
       </div>
       <div class='row' style='height:300px'> <!-- delete height constraint after implementation ready -->
         <!-- display the main steps here -->
-        <div class="ui seven top attached ordered steps">
+        <div class="ui top attached ordered steps" style='overflow-x: scroll'>
           <div class="active step popup-modal" id="test1" href="#test-modal">
             <div class="content">
               <div class="title">how to cook an omelette</div>
@@ -241,55 +248,55 @@
               <!--div class="description">Choose your shipping options</div-->
             </div>
           </div>
-          <div class="step" id="test2">
+          <div class="step popup-modal" id="test2" href="#test-modal">
             <div class="content">
               <div class="title">Heat the pot</div>
               <div class="ui star rating" data-rating="2"></div>
             </div>
           </div>
-          <div class="step" id="test3">
+          <div class="step popup-modal" id="test3" href="#test-modal">
             <div class="content">
               <div class="title">Beat the egg</div>
               <div class="ui star rating" data-rating="3"></div>
             </div>
           </div>
-          <div class="step" id="test4">
+          <div class="step popup-modal" id="test4" href="#test-modal">
             <div class="content">
               <div class="title">Add salt</div>
               <div class="ui star rating" data-rating="4"></div>
             </div>
           </div>
-          <div class="step" id="test5">
+          <div class="step popup-modal" id="test5" href="#test-modal">
             <div class="content">
               <div class="title">Add a spoon of butter</div>
               <div class="ui star rating" data-rating="2"></div>
             </div>
           </div>
-          <div class="step" id="test6">
+          <div class="step popup-modal" id="test6" href="#test-modal">
             <div class="content">
               <div class="title">oil the pen</div>
               <div class="ui star rating" data-rating="3"></div>
             </div>
           </div>
-          <div class="step" id="test7">
+          <div class="step popup-modal" id="test7" href="#test-modal">
             <div class="content">
               <div class="title">Pour the egg</div>
               <div class="ui star rating" data-rating="5"></div>
             </div>
           </div>
-          <div class="step" id="test8">
+          <div class="step popup-modal" id="test8" href="#test-modal">
             <div class="content">
               <div class="title">To saute</div>
               <div class="ui star rating" data-rating="4"></div>
             </div>
           </div>
-          <div class="step" id="test9">
+          <div class="step popup-modal" id="test9" href="#test-modal">
             <div class="content">
               <div class="title">Leave the pan from fire</div>
               <div class="ui star rating" data-rating="3"></div>
             </div>
           </div>
-          <div class="step" id="test10">
+          <div class="step popup-modal" id="test10" href="#test-modal">
             <div class="content">
               <div class="title">Put the omelette on the plate</div>
               <div class="ui star rating" data-rating="2"></div>
@@ -331,19 +338,19 @@
           <button class="ui labeled icon button" onclick="setStepStatus(event,currentStep,'achieve')"><i class="chevron right icon"></i>Next Step</button>
           <button class="ui labeled icon button" onclick="commands('previousVideo')"><i class="backward icon"></i>Previous Expert</button>
           <button class="ui labeled icon button" onclick="commands('nextVideo')"><i class="forward icon"></i>Next Expert</button>
-          <a class="popup-modal" href="#test-modal">Open modal</a>
+          <!--a class="popup-modal" href="#test-modal">Open modal</a-->
         </div>
       </div>
 
       <div id="test-modal" class="mfp-hide white-popup-block">
         <div class="ui container">
           <div class="column">
-            <p>WHY</p>
-            <p>HOW</p>
-            <p>WHAT</p>
-            <p>WHEN</p>
-            <p>WHERE</p>
-            <p><a class="item" href="https://coggle.it/diagram/WeR86QCBZAABLduF" target="_blank">
+            <p id="why">WHY</p>
+            <p id="how">HOW</p>
+            <p id="what">WHAT</p>
+            <p id="when">WHEN</p>
+            <p id="where">WHERE</p>
+            <p><a href="https://coggle.it/diagram/WeR86QCBZAABLduF" target="_blank">
             To Concept Map
             </a></p>
           </div>
