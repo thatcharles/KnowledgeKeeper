@@ -1,7 +1,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <title>IoX Knowledge Explore</title>
+  <title>IoX Knowledge Explorer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -20,7 +20,7 @@
   </head>
   <script type="text/javascript">
     var currentStep = '1';
-    function setStepStatus(step,state){
+    function setStepStatus(event,step,state){
 
       if(state == 'achieve'){
         if(parseInt(step) == 10){
@@ -73,11 +73,19 @@
     }
   </script>
   <script>
+    /*
+    * use .on to set a custom event and wich function to do
+    * than use .trigger to trigger that custom event
+    */
     $(document).bind('keydown', function(e){
       if(e.keyCode === 32 || e.keyCode === 39){
-        $("#test"+currentStep).click();
+        //$("#test"+currentStep).click();
+        $( "#test"+currentStep ).on( "custom", setStepStatus);
+        $( "#test"+currentStep ).trigger( "custom", [ currentStep , "achieve" ] );
       }else if(e.keyCode === 37){
-        $("#test"+currentStep).dblclick();
+        //$("#test"+currentStep).dblclick();
+        $( "#test"+currentStep ).on( "custom", setStepStatus);
+        $( "#test"+currentStep ).trigger( "custom", [ currentStep , "backward" ] );
       }
     });
   </script>
@@ -136,11 +144,11 @@
                             switch(text)
                             {
                               case 'nextVideo':player.nextVideo();break;
-                                case 'previousVideo':player.previousVideo();break;
-                                case 'playVideo':player.playVideo();break;
-                                case 'pauseVideo':player.pauseVideo();break;
-                                case 'stopVideo':player.stopVideo();break;
-                                case "getStatus":player.getPlayerState();break;
+                              case 'previousVideo':player.previousVideo();break;
+                              case 'playVideo':player.playVideo();break;
+                              case 'pauseVideo':player.pauseVideo();break;
+                              case 'stopVideo':player.stopVideo();break;
+                              case "getStatus":player.getPlayerState();break;
                             }
                         }
                     }
@@ -171,54 +179,54 @@
       </div>
       <div class='row' style='height:300px'> <!-- delete height constraint after implementation ready -->
         <!-- display the main steps here -->
-        <div class="ui ten top attached ordered steps">
-          <div class="active step" id="test1" onclick="setStepStatus('1','achieve')">
+        <div class="ui eight top attached ordered steps">
+          <div class="active step" id="test1" >
             <div class="content">
               <div class="title">how to cook an omelette</div>
               <!--div class="description">Choose your shipping options</div-->
             </div>
           </div>
-          <div class="step" id="test2" onclick="setStepStatus('2','achieve')" ondblclick="setStepStatus('2','backward')">
+          <div class="step" id="test2">
             <div class="content">
               <div class="title">Heat the pot</div>
             </div>
           </div>
-          <div class="step" id="test3" onclick="setStepStatus('3','achieve')" ondblclick="setStepStatus('3','backward')">
+          <div class="step" id="test3">
             <div class="content">
               <div class="title">Beat the egg</div>
             </div>
           </div>
-          <div class="step" id="test4" onclick="setStepStatus('4','achieve')" ondblclick="setStepStatus('4','backward')">
+          <div class="step" id="test4">
             <div class="content">
               <div class="title">Add salt</div>
             </div>
           </div>
-          <div class="step" id="test5" onclick="setStepStatus('5','achieve')" ondblclick="setStepStatus('5','backward')">
+          <div class="step" id="test5">
             <div class="content">
               <div class="title">Add a spoon of butter</div>
             </div>
           </div>
-          <div class="step" id="test6" onclick="setStepStatus('6','achieve')" ondblclick="setStepStatus('6','backward')">
+          <div class="step" id="test6">
             <div class="content">
               <div class="title">oil the pen</div>
             </div>
           </div>
-          <div class="step" id="test7" onclick="setStepStatus('7','achieve')" ondblclick="setStepStatus('7','backward')">
+          <div class="step" id="test7">
             <div class="content">
               <div class="title">Pour the egg</div>
             </div>
           </div>
-          <div class="step" id="test8" onclick="setStepStatus('8','achieve')" ondblclick="setStepStatus('8','backward')">
+          <div class="step" id="test8">
             <div class="content">
               <div class="title">To saute</div>
             </div>
           </div>
-          <div class="step" id="test9" onclick="setStepStatus('9','achieve')" ondblclick="setStepStatus('9','backward')">
+          <div class="step" id="test9">
             <div class="content">
               <div class="title">Leave the pan from fire</div>
             </div>
           </div>
-          <div class="step" id="test10" onclick="setStepStatus('10','achieve')" ondblclick="setStepStatus('10','backward')">
+          <div class="step" id="test10">
             <div class="content">
               <div class="title">Put the omelette on the plate</div>
             </div>
@@ -255,8 +263,8 @@
       </div>
       <div class='row justify-content-md-center'>
         <div class='column'>
-          <button class="ui labeled icon button" onclick="setStepStatus(currentStep,'backward')"><i class="chevron left icon"></i>Previous Step</button>
-          <button class="ui labeled icon button" onclick="setStepStatus(currentStep,'achieve')"><i class="chevron right icon"></i>Next Step</button>
+          <button class="ui labeled icon button" onclick="setStepStatus(event,currentStep,'backward')"><i class="chevron left icon"></i>Previous Step</button>
+          <button class="ui labeled icon button" onclick="setStepStatus(event,currentStep,'achieve')"><i class="chevron right icon"></i>Next Step</button>
           <button class="ui labeled icon button" onclick="commands('previousVideo')"><i class="backward icon"></i>Previous Expert</button>
           <button class="ui labeled icon button" onclick="commands('nextVideo')"><i class="forward icon"></i>Next Expert</button>
         </div>
