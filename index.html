@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
   <link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" id="camera-css"  href="css/camera.css" type="text/css" media="all">
   <link href="css/bootstrap.css" rel="stylesheet">
@@ -28,9 +26,60 @@
       });
 
       $('.popup-modal').click(function() {
-        /*
-        * To do: add respective second layer content here
-        */
+        document.getElementById('why').innerHTML = 'WHY';
+        document.getElementById('how').innerHTML = 'HOW';
+        document.getElementById('what').innerHTML = 'WHAT';
+        document.getElementById('when').innerHTML = 'WHEN';
+        document.getElementById('where').innerHTML = 'WHERE';
+
+        switch(currentStep)
+        {
+          case '1':
+            document.getElementById('why').innerHTML = "<p>WHY:</p><p>Omelette:Its Chinese name is directly translated from English</p>";
+            break;
+          case '2':
+            document.getElementById('how').innerHTML = "<p>HOW:</p><p>60C 100W</p><p>about 80 degree (medium heat).</p>";
+            break;
+          case '3':
+            document.getElementById('how').innerHTML = "<p>HOW:</p><p>evenly mix two eggs in a bowl: WHY: if directly crack eggs into the pan will cause unevenly mixture of eggs</p><p>Mix it until yolks and whites blend evenly.: Use chopsticks to beat the egg</p><p>amaintain an angle to beat the eggs.</p>";
+            document.getElementById('what').innerHTML = "<p>WHAT:</p><p>mixing mechine.</p><p>No special rules for selecting eggs</p><p>chapsticks</p>";
+            document.getElementById('when').innerHTML = "<p>WHEN:</p><p>beat until you can't see the white.</p>";
+            break;
+          case '4':
+            document.getElementById('how').innerHTML = "<p>HOW:</p><p>mix the salt into eggs evenly</p>";
+            document.getElementById('what').innerHTML = "<p>WHAT:</p><p>mlittle amount of it</p><p>a tea spoon</p>";
+            break;
+          case '5':
+            document.getElementById('why').innerHTML = "<p>WHY:</p><p>butter makes it have milk and heavier flavor.</p>";
+            document.getElementById('how').innerHTML = "<p>HOW:</p><p>OR Add vegetable oil</p>";
+            document.getElementById('what').innerHTML = "<p>WHAT:</p><p>Unsalted butter</p><p>Salted butter</p>";
+            break;
+          case '6':
+            document.getElementById('how').innerHTML = "<p>HOW:</p><p>stir the butter to let it cover all the pans</p><p>slightly use the spatula to stir it, making it evenly spread in the pan</p>";
+            document.getElementById('when').innerHTML = "<p>WHEN:</p><p>stop when you see the butter turns red</p>";
+            document.getElementById('what').innerHTML = "<p>WHAT: Oil:</p><p>Rapeseed oil (best): WHY: more healthy then blend oil under high temperature</p><p>liquid (prefered): WHY: easier to spread out</p><p>concrete (not recommend): WHY: have to stab to spread it out: may harm the pan</p>";
+            break;
+          case '7':
+            document.getElementById('why').innerHTML = "<p>WHY:</p><p>key to the shape of omelett.</p>";
+            document.getElementById('when').innerHTML = "<p>WHEN:</p><p>keep the actions for 30 secs to 1 mins</p>";
+            document.getElementById('how').innerHTML = "<p>HOW:</p><p>keep stirring the eggs</p><p>do them at the same time: slowly pour mixed-egg from the pan-edge: slowly rotate the pan: no need  worrying about the spill</p><p>shake the pan</p><p>shake the pan: HOW: turn low er the heat: WHY: high temperature is hear to control, egg may stick on the pan:: WHY: evenly spread mixed-egg</p><p>HOW: temperature: 100 Celsius degree: This temperature will heat the egg fast: If the temperature is lower than 100 Celsius degree, then you have to wait longer</p>";
+            break;
+          case '8':
+            document.getElementById('what').innerHTML = "<p>WHAT: spatula</p>";
+            document.getElementById('how').innerHTML = "<p>HOW:</p><p>stop moving the pan</p><p>Adjust the temperature: 100 Celsius degree might be too high...: Omelette can not be over cooked</p><p>Fold the egg: It makes the egg look like a typical omelette: It will blend some air with the egg while you fold it. It will taste more soft: it's okay to overlap the egg a little bit while flipping, so don't have to haste</p><p>shake the pan: HOW: turn low er the heat: WHY: high temperature is hear to control, egg may stick on the pan:: WHY: evenly spread mixed-egg</p><p>slightly stab on the surface, meanwhile wait the bottom to become concrete: want it in medium: surface with liquid mixed-egg: want it to be well-done: surface without liquid mix-egg.</p>";
+            break;
+          case '9':
+            document.getElementById('why').innerHTML = "<p>WHY:</p><p>to prevent  omelette from being burnt.</p>";
+            document.getElementById('what').innerHTML = "<p>WHAT:</p><p>Add tomato sauce.</p>";
+            document.getElementById('when').innerHTML = "<p>WHEN:</p><p>after the surface started to pop bubbles.</p>";
+            document.getElementById('how').innerHTML = "<p>HOW:</p><p>Use the remaining heat to heat the egg.</p>";
+            break;
+          case '10':
+            document.getElementById('why').innerHTML = "<p>WHY:</p><p>salt: can be added if favor more harvest taste</p><p>spatula</p>";
+            document.getElementById('how').innerHTML = "<p>HOW:</p><p>slide the omelette into bowl or plate</p><p>hold the pan and turn it to 3 o'click direction</p><p>use spatula to slide the omelette out to the plate from the front of the pan</p>";
+            break;
+        }
+        
       });
 
       $('.popup-modal').magnificPopup({
@@ -43,7 +92,6 @@
         closeBtnInside: true,
         fixedContentPos: true,
         alignTop: false,
-        //modal: true,
       });
 
 
@@ -71,22 +119,55 @@
         document.getElementById('test'+ step).className = "step";
       }
       document.getElementById('test'+ nextStep.toString()).className = "active step";
-
       /*
       * use array to encode which tools or ingredients do we need(1) or not(0). 
       */
       switch(currentStep)
       {
-        case '1': setinfo('Before we cook an Omlette let\'s prepare',[1,1,1],[1,1,1]);break;
-        case '2': setinfo('what should we prepare for heatting the pot',[0,0,0],[0,0,0]);break;
-        case '3': setinfo('what should we prepare for beating the egg',[1,0,0],[1,0,0]);break;
-        case '4': setinfo('what should we prepare for adding salt',[1,0,0],[0,1,0]);break;
-        case '5': setinfo('what should we prepare for adding butter',[1,0,1],[0,0,1]);break;
-        case "6": setinfo('what should we prepare for oiling the pan',[1,0,0],[0,0,0]);break;
-        case "7": setinfo('what should we prepare for pouring the egg',[1,1,1],[1,0,0]);break;
-        case "8": setinfo('what should we prepare for sauting',[1,0,0],[1,1,0]);break;
-        case "9": setinfo('what should we prepare for leaving the pan from fire',[1,0,0],[1,1,1]);break;
-        case "10": setinfo('what should we prepare for plating the omelette',[1,0,1],[1,1,1]);break;
+        case '1': 
+          setinfo('Before we cook an Omlette let\'s prepare',[1,1,1],[1,1,1]);
+          setImage(1);
+          break;
+        case '2': 
+          setinfo('what should we prepare for heatting the pot',[0,0,0],[0,0,0]);
+          setImage(2);
+          break;
+        case '3': 
+          setinfo('what should we prepare for beating the egg',[1,0,0],[1,0,0]);
+          setImage(3);
+          setVideo(3);
+          break;
+        case '4': 
+          setinfo('what should we prepare for adding salt',[1,0,0],[0,1,0]);
+          setImage(4);
+          setVideo(4);
+          break;
+        case '5': 
+          setinfo('what should we prepare for adding butter',[1,0,1],[0,0,1]);
+          setImage(5);
+          setVideo(5);
+          break;
+        case "6": 
+          setinfo('what should we prepare for oiling the pan',[1,0,0],[0,0,0]);
+          setImage(6);
+          break;
+        case "7": 
+          setinfo('what should we prepare for pouring the egg',[1,1,1],[1,0,0]);
+          setImage(7);
+          setVideo(7);
+          break;
+        case "8": 
+          setinfo('what should we prepare for sauting',[1,0,0],[1,1,0]);
+          setImage(8);
+          break;
+        case "9": 
+          setinfo('what should we prepare for leaving the pan from fire',[1,0,0],[1,1,1]);
+          setImage(9);
+          break;
+        case "10": 
+          setinfo('what should we prepare for plating the omelette',[1,0,1],[1,1,1]);
+          setImage(10);
+          break;
         default: '1';
       }
     }
@@ -105,6 +186,24 @@
           $("#Ingre"+(i+1).toString()).show();
         }
       }
+    }
+
+    function setImage(step){
+      document.getElementById('screenshot').innerHTML = '';
+      switch(step)
+      {
+        case 2: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/pre_heat.png" style="max-height: 250px;"></P>';break;
+        case 3: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/break_egg.png" style="max-height: 250px"></p>';break;
+        case 4: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/add_salt.png" style="max-height: 250px"></p>';break;
+        case 6: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/oil_pan.png" style="max-height: 250px; margin-right: 1cm;"><img src="img/procedural/oil_pan_2.png" style="max-height: 250px"></p>';break;
+        case 7: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/pour_egg.png" style="max-height: 250px"></p>';break;
+        case 8: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/to_saute.png" style="max-height: 250px"></p>';break;
+        case 9: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/remove_from_fire.png" style="max-height: 250px"></p>';break;
+      }
+    }
+
+    function setVideo(step){
+        commands(step,0);
     }
   </script>
   <script>
@@ -127,27 +226,6 @@
   </script>
 
   <body>
-    <!--side bar code-->
-    <!--div class="ui sidebar inverted vertical menu">
-      <a class="item">
-        WHY
-      </a>
-      <a class="item">
-        HOW
-      </a>
-      <a class="item">
-        WHAT
-      </a>
-      <a class="item">
-        WHEN
-      </a>
-      <a class="item">
-        WHERE
-      </a>
-      <a class="item" href="https://coggle.it/diagram/WeR86QCBZAABLduF" target="_blank">
-        To Concept Map
-      </a>
-    </div-->
 
   <div class="pusher">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3db0c3;">
@@ -188,6 +266,10 @@
           <!-- video player -->
           <!-- use carousel slide to display multiple videos -->
           <div id="player" width="620"></div>
+          <p class="center">
+            <button class="ui labeled icon button" onclick="changeVideo('previousVideo')"><i class="backward icon"></i>Previous Expert</button>
+            <button class="ui labeled icon button" onclick="changeVideo('nextVideo')"><i class="forward icon"></i>Next Expert</button>
+          </p>
                 <script>
                     var tag = document.createElement('script');
 
@@ -197,19 +279,42 @@
 
                     var player;
 
-                    function commands(text)
+                    function changeVideo(text)
+                    {
+                      if(player!=null)
+                      {
+                        switch(text)
+                        {
+                          case 'previousVideo': player.previousVideo(); commands(parseInt(currentStep),-1); break;
+                          case 'nextVideo': player.nextVideo(); commands(parseInt(currentStep),1); break;
+                        }
+                      }
+                      
+                    }
+                    /*
+                    * video index returned from changeVideo() is always delayed one step so we need a flag to corret them.
+                    */
+                    function commands(step,flag)
                     {
                         if(player!=null)
                         {
-                            //player.seekTo(parseInt(text),true);
-                            switch(text)
+                            var currentIndex = player.getPlaylistIndex();
+                            if(flag == 1 && currentIndex!= 2) currentIndex++;
+                            if(flag == -1 && currentIndex!= 0) currentIndex--;
+
+                            switch(step)
                             {
-                              case 'nextVideo':player.nextVideo();break;
-                              case 'previousVideo':player.previousVideo();break;
-                              case 'playVideo':player.playVideo();break;
-                              case 'pauseVideo':player.pauseVideo();break;
-                              case 'stopVideo':player.stopVideo();break;
-                              case "getStatus":player.getPlayerState();break;
+                              case 3: player.playVideoAt(0); player.seekTo(51,true); break;
+                              case 4: player.playVideoAt(1); player.seekTo(525,true); break;
+                              case 5: player.playVideoAt(0); player.seekTo(103,true); break;
+                              case 7:
+                                switch(currentIndex)
+                                {
+                                  case 0: player.seekTo(163,true); break;
+                                  case 1: player.seekTo(802,true); break;
+                                  case 2: player.seekTo(142,true); break;
+                                }
+                                break;
                             }
                         }
                     }
@@ -218,11 +323,10 @@
                         player = new YT.Player('player', {
                             height: '315',
                             width: '560',
-                            //videoId: 'bBXBs5At6Xo',
                             playerVars: {
                               'controls': 1,
                               listType:'playlist',
-                              list:'PL7-jPKtc4r78-wCZcQn5IqyuWhBZ8fOxT',
+                              list:'PL8AKuAio0gz3FKzrh21KSxnv7m-7AFGsh',
                               index:parseInt(0),
                           },
                             events: {
@@ -238,12 +342,12 @@
         </div>
 
       </div>
-      <div class='row' style='height:300px'> <!-- delete height constraint after implementation ready -->
+      <div class='row' style='height:450px; margin-top: -10px;'> <!-- delete height constraint after implementation ready -->
         <!-- display the main steps here -->
         <div class="ui top attached ordered steps" style='overflow-x: scroll'>
           <div class="active step popup-modal" id="test1" href="#test-modal">
             <div class="content">
-              <div class="title">how to cook an omelette</div>
+              <div class="title">Get ready beforehand</div>
               <div class="ui star rating" data-rating="4"></div>
               <!--div class="description">Choose your shipping options</div-->
             </div>
@@ -304,40 +408,13 @@
           </div>
         </div>
 
-        <!--div class="ui three bottom attached steps">
-          <div class="step" id="test7" onclick="setStepStatus('11','achieve')" ondblclick="setStepStatus('11','backward')">
-            <i class="truck icon"></i>
-            <div class="content">
-              <div class="title">Shipping</div>
-              <div class="description">Choose your shipping options</div>
-            </div>
-          </div>
-          <div class="step" id="test8" onclick="setStepStatus('12','achieve')" ondblclick="setStepStatus('12','backward')">
-            <i class="browser icon"></i>
-            <div class="content">
-              <div class="title">Billing</div>
-              <div class="description">Enter billing information</div>
-            </div>
-          </div>
-          <div class="step" id="test9" onclick="setStepStatus('13','achieve')" ondblclick="setStepStatus('13','backward')">
-            <i class="info icon"></i>
-            <div class="content">
-              <div class="title">Confirm Order</div>
-              <div class="description">Verify order details</div>
-            </div>
-          </div>
-        </div-->
-
-        <div class="ui attached segment">
-          <p>to load the photo of current work</p>
+        <div class="ui attached segment" id="screenshot">
         </div>     
       </div>
       <div class='row justify-content-md-center'>
         <div class='column'>
           <button class="ui labeled icon button" onclick="setStepStatus(event,currentStep,'backward')"><i class="chevron left icon"></i>Previous Step</button>
           <button class="ui labeled icon button" onclick="setStepStatus(event,currentStep,'achieve')"><i class="chevron right icon"></i>Next Step</button>
-          <button class="ui labeled icon button" onclick="commands('previousVideo')"><i class="backward icon"></i>Previous Expert</button>
-          <button class="ui labeled icon button" onclick="commands('nextVideo')"><i class="forward icon"></i>Next Expert</button>
           <!--a class="popup-modal" href="#test-modal">Open modal</a-->
         </div>
       </div>
@@ -345,12 +422,12 @@
       <div id="test-modal" class="mfp-hide white-popup-block">
         <div class="ui container">
           <div class="column">
-            <p id="why">WHY</p>
-            <p id="how">HOW</p>
-            <p id="what">WHAT</p>
-            <p id="when">WHEN</p>
-            <p id="where">WHERE</p>
-            <p><a href="https://coggle.it/diagram/WeR86QCBZAABLduF" target="_blank">
+            <p class="center" color="#ed916a" id="why">WHY</p>
+            <p class="center" color="#a784d8" id="how">HOW</p>
+            <p class="center" color="#4bddc7" id="what">WHAT</p>
+            <p class="center" color="#97e094" id="when">WHEN</p>
+            <p class="center" color="#d1c977" id="where">WHERE</p>
+            <p class="center" ><a href="https://coggle.it/diagram/WeR86QCBZAABLduF" target="_blank">
             To Concept Map
             </a></p>
           </div>
@@ -369,14 +446,6 @@
     </div>
 
   </div><!--pusher-->
-
-    <!--script type="text/javascript">
-      $('.sidebar').click(function(){
-        $('.ui.sidebar')
-        .sidebar('toggle')
-        ;
-      })
-    </script-->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
