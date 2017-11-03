@@ -19,11 +19,63 @@
   </head>
   <script>
     $(document).ready(function(){
-      $('.rating')
+      $('.ui.rating')
       .rating({
         initialRating: 3,
         maxRating: 5
       });
+
+      var rate= ['poor data','few data','medium data','sufficient data','abundant data'];
+
+      
+      $.each($('#rating1 > i.icon'), function (index, item) {
+        $(item).attr('data-ratetext', rate[index]);
+      });
+
+      $.each($('#rating2 > i.icon'), function (index, item) {
+      	$(item).attr('data-ratetext', rate[index]);
+      });
+
+      $.each($('#rating3 > i.icon'), function (index, item) {
+      	$(item).attr('data-ratetext', rate[index]);
+      });
+
+      $.each($('#rating4 > i.icon'), function (index, item) {
+      	$(item).attr('data-ratetext', rate[index]);
+      });
+
+      $.each($('#rating5 > i.icon'), function (index, item) {
+      	$(item).attr('data-ratetext', rate[index]);
+      });
+
+      $.each($('#rating6 > i.icon'), function (index, item) {
+      	$(item).attr('data-ratetext', rate[index]);
+      });
+
+      $.each($('#rating7 > i.icon'), function (index, item) {
+      	$(item).attr('data-ratetext', rate[index]);
+      });
+
+      $.each($('#rating8 > i.icon'), function (index, item) {
+      	$(item).attr('data-ratetext', rate[index]);
+      });
+
+      $.each($('#rating9 > i.icon'), function (index, item) {
+      	$(item).attr('data-ratetext', rate[index]);
+      });
+
+      $.each($('#rating10 > i.icon'), function (index, item) {
+      	$(item).attr('data-ratetext', rate[index]);
+      });   
+
+      $(document).on('mouseenter', '#rating1 > i.icon, #rating2 > i.icon, #rating3 > i.icon, #rating4 > i.icon, #rating5 > i.icon, #rating6 > i.icon, #rating7 > i.icon, #rating8 > i.icon, #rating9 > i.icon, #rating10 > i.icon', function() {
+        $(this)
+        .popup({
+         title: $(this).attr('data-ratetext'),
+         on:'hover'
+       })
+        .popup('show');
+      })
 
       $('.popup-modal').click(function() {
         document.getElementById('why').innerHTML = 'WHY';
@@ -79,8 +131,11 @@
             document.getElementById('how').innerHTML = "<p>HOW:</p><p>slide the omelette into bowl or plate</p><p>hold the pan and turn it to 3 o'click direction</p><p>use spatula to slide the omelette out to the plate from the front of the pan</p>";
             break;
         }
+
+
         
       });
+
 
       $('.popup-modal').magnificPopup({
         type: 'inline',
@@ -119,6 +174,15 @@
         document.getElementById('test'+ step).className = "step";
       }
       document.getElementById('test'+ nextStep.toString()).className = "active step";
+      document.getElementById('stepNum').innerHTML = currentStep+"/10";
+      if(parseInt(currentStep) == 1){
+      	$("#step_back").css({"visibility":"hidden"});
+      }else if(parseInt(currentStep) == 10){
+      	$("#step_next").css({"visibility":"hidden"});
+      }else{
+      	$("#step_back").css({"visibility":"visible"});
+      	$("#step_next").css({"visibility":"visible"});
+      }
       /*
       * use array to encode which tools or ingredients do we need(1) or not(0). 
       */
@@ -267,8 +331,9 @@
           <!-- use carousel slide to display multiple videos -->
           <div id="player" width="620"></div>
           <p class="center">
-            <button class="ui labeled icon button" onclick="changeVideo('previousVideo')"><i class="backward icon"></i>Previous Expert</button>
-            <button class="ui labeled icon button" onclick="changeVideo('nextVideo')"><i class="forward icon"></i>Next Expert</button>
+          	<button class="ui labeled icon button" id="expert_back" style="visibility: hidden;" onclick="changeVideo('previousVideo')"><i class="backward icon"></i>Previous Expert</button>
+          	<a id="expertNum">1/3</a>
+          	<button class="ui labeled icon button" id="expert_next" onclick="changeVideo('nextVideo')"><i class="forward icon"></i>Next Expert</button>
           </p>
                 <script>
                     var tag = document.createElement('script');
@@ -296,13 +361,23 @@
                     */
                     function commands(step,flag)
                     {
-                        if(player!=null)
-                        {
-                            var currentIndex = player.getPlaylistIndex();
-                            if(flag == 1 && currentIndex!= 2) currentIndex++;
-                            if(flag == -1 && currentIndex!= 0) currentIndex--;
+                    	if(player!=null)
+                    	{
+                    		var currentIndex = player.getPlaylistIndex();
+                    		if(flag == 1 && currentIndex!= 2) currentIndex++;
+                    		if(flag == -1 && currentIndex!= 0) currentIndex--;
 
-                            switch(step)
+                    		document.getElementById('expertNum').innerHTML = (currentIndex+1).toString()+"/3";
+                    		$("#expert_back").css({"visibility":"visible"});
+                    		$("#expert_next").css({"visibility":"visible"});
+                    		if(currentIndex == 0 || step == 3 || step == 4 || step == 5){
+                    			$("#expert_back").css({"visibility":"hidden"});
+                    		}
+                    		if(currentIndex == 2 || step == 3 || step == 4 || step == 5){
+                    			$("#expert_next").css({"visibility":"hidden"});
+                    		}
+
+                    		switch(step)
                             {
                               case 3: player.playVideoAt(0); player.seekTo(51,true); break;
                               case 4: player.playVideoAt(1); player.seekTo(525,true); break;
@@ -344,68 +419,68 @@
         </div>
 
       </div>
-      <div class='row' style='height:450px; margin-top: -10px;'> <!-- delete height constraint after implementation ready -->
+      <div class='row' style='margin-top: 0px;'> <!-- delete height constraint after implementation ready -->
         <!-- display the main steps here -->
         <div class="ui top attached ordered steps" style='overflow-x: scroll'>
           <div class="active step popup-modal" id="test1" href="#test-modal">
             <div class="content">
               <div class="title">Get ready beforehand</div>
-              <div class="ui star rating" data-rating="4"></div>
+              <div class="ui star rating" id="rating1" data-rating="4"></div>
               <!--div class="description">Choose your shipping options</div-->
             </div>
           </div>
-          <div class="step popup-modal" id="test2" href="#test-modal">
+          <div class="step popup-modal" id="test2" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Heat the pot</div>
-              <div class="ui star rating" data-rating="2"></div>
+              <div class="ui star rating" id="rating2" data-rating="2"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test3" href="#test-modal">
+          <div class="step popup-modal" id="test3" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Beat the egg</div>
-              <div class="ui star rating" data-rating="3"></div>
+              <div class="ui star rating" id="rating3" data-rating="3"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test4" href="#test-modal">
+          <div class="step popup-modal" id="test4" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Add salt</div>
-              <div class="ui star rating" data-rating="4"></div>
+              <div class="ui star rating" id="rating4" data-rating="4"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test5" href="#test-modal">
+          <div class="step popup-modal" id="test5" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Add a spoon of butter</div>
-              <div class="ui star rating" data-rating="2"></div>
+              <div class="ui star rating" id="rating5" data-rating="2"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test6" href="#test-modal">
+          <div class="step popup-modal" id="test6" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">oil the pen</div>
-              <div class="ui star rating" data-rating="3"></div>
+              <div class="ui star rating" id="rating6" data-rating="3"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test7" href="#test-modal">
+          <div class="step popup-modal" id="test7" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Pour the egg</div>
-              <div class="ui star rating" data-rating="5"></div>
+              <div class="ui star rating" id="rating7" data-rating="5"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test8" href="#test-modal">
+          <div class="step popup-modal" id="test8" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">To saute</div>
-              <div class="ui star rating" data-rating="4"></div>
+              <div class="ui star rating" id="rating8" data-rating="4"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test9" href="#test-modal">
+          <div class="step popup-modal" id="test9" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Leave the pan from fire</div>
-              <div class="ui star rating" data-rating="3"></div>
+              <div class="ui star rating" id="rating9" data-rating="3"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test10" href="#test-modal">
+          <div class="step popup-modal" id="test10" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Put the omelette on the plate</div>
-              <div class="ui star rating" data-rating="2"></div>
+              <div class="ui star rating" id="rating10" data-rating="2"></div>
             </div>
           </div>
         </div>
@@ -415,8 +490,9 @@
       </div>
       <div class='row justify-content-md-center'>
         <div class='column'>
-          <button class="ui labeled icon button" onclick="setStepStatus(event,currentStep,'backward')"><i class="chevron left icon"></i>Previous Step</button>
-          <button class="ui labeled icon button" onclick="setStepStatus(event,currentStep,'achieve')"><i class="chevron right icon"></i>Next Step</button>
+          <button class="ui labeled icon button" id="step_back" style="visibility: hidden;" onclick="setStepStatus(event,currentStep,'backward')"><i class="chevron left icon"></i>Previous Step</button>
+          <a id="stepNum">1/10</a>
+          <button class="ui labeled icon button" id="step_next" onclick="setStepStatus(event,currentStep,'achieve')"><i class="chevron right icon"></i>Next Step</button>
           <!--a class="popup-modal" href="#test-modal">Open modal</a-->
         </div>
       </div>
