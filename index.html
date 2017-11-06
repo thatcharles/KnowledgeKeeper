@@ -16,6 +16,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="Semantic-UI-CSS/semantic.js"></script>
   <!--script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js""></script-->
+  <script type="text/javascript">
+  	      function showFrame( url )
+        {
+            document.getElementById('iframe').src = url;
+        }
+  </script>
   </head>
   <script>
     $(document).ready(function(){
@@ -77,63 +83,45 @@
         .popup('show');
       })
 
+
+
+ 	  
       $('.popup-modal').click(function() {
-        document.getElementById('why').innerHTML = 'WHY';
-        document.getElementById('how').innerHTML = 'HOW';
-        document.getElementById('what').innerHTML = 'WHAT';
-        document.getElementById('when').innerHTML = 'WHEN';
-        document.getElementById('where').innerHTML = 'WHERE';
 
         switch(currentStep)
         {
           case '1':
-            document.getElementById('why').innerHTML = "<p>WHY:</p><p>Omelette:Its Chinese name is directly translated from English</p>";
+            showFrame('https://coggle.it/diagram/Wf12Y4JbsgABTV6M/3113c9454bb650a146555747bc01a6dcf2bcd185257d47628c368dc224452122');
             break;
           case '2':
-            document.getElementById('how').innerHTML = "<p>HOW:</p><p>60C 100W</p><p>about 80 degree (medium heat).</p>";
+          	showFrame('https://coggle.it/diagram/Wf12Y4JbsgABTV6M/3113c9454bb650a146555747bc01a6dcf2bcd185257d47628c368dc224452122');
             break;
           case '3':
-            document.getElementById('how').innerHTML = "<p>HOW:</p><p>evenly mix two eggs in a bowl: WHY: if directly crack eggs into the pan will cause unevenly mixture of eggs</p><p>Mix it until yolks and whites blend evenly.: Use chopsticks to beat the egg</p><p>amaintain an angle to beat the eggs.</p>";
-            document.getElementById('what').innerHTML = "<p>WHAT:</p><p>mixing mechine.</p><p>No special rules for selecting eggs</p><p>chapsticks</p>";
-            document.getElementById('when').innerHTML = "<p>WHEN:</p><p>beat until you can't see the white.</p>";
+          	showFrame('https://coggle.it/diagram/Wf13wYJbsgABTWHP/1864ac07fe4b6273a9a9e7096e7b397c72c0a6bb942741941b434d7fd36841dc');
             break;
           case '4':
-            document.getElementById('how').innerHTML = "<p>HOW:</p><p>mix the salt into eggs evenly</p>";
-            document.getElementById('what').innerHTML = "<p>WHAT:</p><p>mlittle amount of it</p><p>a tea spoon</p>";
+          	showFrame('https://coggle.it/diagram/Wf15mVcFBgABPvcO/da7512921fcca27f56e2f161892529902d636e2ae7e3be77dc8e3533dfaef799');
             break;
           case '5':
-            document.getElementById('why').innerHTML = "<p>WHY:</p><p>butter makes it have milk and heavier flavor.</p>";
-            document.getElementById('how').innerHTML = "<p>HOW:</p><p>OR Add vegetable oil</p>";
-            document.getElementById('what').innerHTML = "<p>WHAT:</p><p>Unsalted butter</p><p>Salted butter</p>";
+          	showFrame('https://coggle.it/diagram/Wf17dYJbsgABTWqn/f899d8f1fe17a8b8c3d139ed5771ef31a48a96c1bb3a1ec6e6d921f800655508');
             break;
           case '6':
-            document.getElementById('how').innerHTML = "<p>HOW:</p><p>stir the butter to let it cover all the pans</p><p>slightly use the spatula to stir it, making it evenly spread in the pan</p>";
-            document.getElementById('when').innerHTML = "<p>WHEN:</p><p>stop when you see the butter turns red</p>";
-            document.getElementById('what').innerHTML = "<p>WHAT: Oil:</p><p>Rapeseed oil (best): WHY: more healthy then blend oil under high temperature</p><p>liquid (prefered): WHY: easier to spread out</p><p>concrete (not recommend): WHY: have to stab to spread it out: may harm the pan</p>";
+          	showFrame('https://coggle.it/diagram/Wf170IJbsgABTWvK/4f4c3d9626dd430fa5230422ef31f4f0ac41b08e5386efb1ae2088de90ba5ef2');
             break;
           case '7':
-            document.getElementById('why').innerHTML = "<p>WHY:</p><p>key to the shape of omelett.</p>";
-            document.getElementById('when').innerHTML = "<p>WHEN:</p><p>keep the actions for 30 secs to 1 mins</p>";
-            document.getElementById('how').innerHTML = "<p>HOW:</p><p>keep stirring the eggs</p><p>do them at the same time: slowly pour mixed-egg from the pan-edge: slowly rotate the pan: no need  worrying about the spill</p><p>shake the pan</p><p>shake the pan: HOW: turn low er the heat: WHY: high temperature is hear to control, egg may stick on the pan:: WHY: evenly spread mixed-egg</p><p>HOW: temperature: 100 Celsius degree: This temperature will heat the egg fast: If the temperature is lower than 100 Celsius degree, then you have to wait longer</p>";
+          	showFrame('https://coggle.it/diagram/Wf18CbjLMQABb66i/2680b8450c1fbd589d6a79c0ebdee616677f187efabb8ef3b624f2b6de5f0d13');
             break;
           case '8':
-            document.getElementById('what').innerHTML = "<p>WHAT: spatula</p>";
-            document.getElementById('how').innerHTML = "<p>HOW:</p><p>stop moving the pan</p><p>Adjust the temperature: 100 Celsius degree might be too high...: Omelette can not be over cooked</p><p>Fold the egg: It makes the egg look like a typical omelette: It will blend some air with the egg while you fold it. It will taste more soft: it's okay to overlap the egg a little bit while flipping, so don't have to haste</p><p>shake the pan: HOW: turn low er the heat: WHY: high temperature is hear to control, egg may stick on the pan:: WHY: evenly spread mixed-egg</p><p>slightly stab on the surface, meanwhile wait the bottom to become concrete: want it in medium: surface with liquid mixed-egg: want it to be well-done: surface without liquid mix-egg.</p>";
+          	showFrame('https://coggle.it/diagram/Wf18aIJbsgABTW2s/221eaaaec4c0f787b40d616c679065639bfb7e075b7a4a2fe7e3fc39b14d7efd');
             break;
           case '9':
-            document.getElementById('why').innerHTML = "<p>WHY:</p><p>to prevent  omelette from being burnt.</p>";
-            document.getElementById('what').innerHTML = "<p>WHAT:</p><p>Add tomato sauce.</p>";
-            document.getElementById('when').innerHTML = "<p>WHEN:</p><p>after the surface started to pop bubbles.</p>";
-            document.getElementById('how').innerHTML = "<p>HOW:</p><p>Use the remaining heat to heat the egg.</p>";
+          	showFrame('https://coggle.it/diagram/Wf18oVcFBgABPv2P/1e39acfaf7f6dabeef68f491399ac0cf0c28589422d8cea8f2c3219b10f67e10');
             break;
           case '10':
-            document.getElementById('why').innerHTML = "<p>WHY:</p><p>salt: can be added if favor more harvest taste</p><p>spatula</p>";
-            document.getElementById('how').innerHTML = "<p>HOW:</p><p>slide the omelette into bowl or plate</p><p>hold the pan and turn it to 3 o'click direction</p><p>use spatula to slide the omelette out to the plate from the front of the pan</p>";
+          	showFrame('https://coggle.it/diagram/Wf184LjLMQABb7Ep/c79d890e115f4ad7c3e9666bf085908ca73afaca5a5b2ad2bc561719fc25b7b5');
             break;
         }
 
-
-        
       });
 
 
@@ -148,7 +136,8 @@
         fixedContentPos: true,
         alignTop: false,
       });
-
+	  
+        
 
     });
   </script>
@@ -256,13 +245,14 @@
       document.getElementById('screenshot').innerHTML = '';
       switch(step)
       {
-        case 2: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/pre_heat.png" style="max-height: 250px;"></P>';break;
-        case 3: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/break_egg.png" style="max-height: 250px"></p>';break;
-        case 4: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/add_salt.png" style="max-height: 250px"></p>';break;
-        case 6: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/oil_pan.png" style="max-height: 250px; margin-right: 1cm;"><img src="img/procedural/oil_pan_2.png" style="max-height: 250px"></p>';break;
-        case 7: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/pour_egg.png" style="max-height: 250px"></p>';break;
-        case 8: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/to_saute.png" style="max-height: 250px"></p>';break;
-        case 9: document.getElementById('screenshot').innerHTML = '<p class="center"><img src="img/procedural/remove_from_fire.png" style="max-height: 250px"></p>';break;
+        case 2: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/pre_heat.png" style="max-height: 180px; float: left; margin-right: 15px"><p>Partner:感覺不太出來他有沒有耶...要先等一下<br>Cooker:噢噢，這樣就有了<br>Cooker:好，等他有點熱的時候，但我都會等，<br>Partner:冒煙<br>Cooker:水有點滾...的時候，就把水蒸乾，之後再放油<br>Partner:噢，那現在看不出來有沒有水，你要怎麼判斷?<br>Cooker:怎麼判斷喔，就是等，一段時間後，然後放油下去，油會開始跑來跑去的時候，那就代表欸，溫度應該可以。<br>......</p></div>';break;
+        case 3: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/break_egg.png" style="max-height: 180px;float: left; margin-right: 15px;"><p>Partner:因為我是一個新手學習者，要打多久?<br>Cooker1:我是會打比較多一點，打比較多空氣進去，他會比較滑...<br>Partner:是噢<br>Cooker1:就有點像蛋白霜那種感覺，他的蛋白會變得比較綿密。<br>Partner:OK，那要同一個方向嗎，打的時候?<br>Cooker1:對。<br>Partner:要同一個方向<br>Cooker1:沒有啊，不同方向也是可以，可是就會很奇怪，就你順時鐘攪一攪突然逆時鐘<br>Partner:噢，OK、OK<br>......</p></div>';break;
+        case 4: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/add_salt.png" style="max-height: 180px;float: left; margin-right: 15px;"><p>Cooker:再撒一點鹽<br>(沉默)<br>Cooker:鹽巴我就...<br>Partner:看個人口味<br>Cooker:憑感覺，我也不知道耶<br>......</p></div>';break;
+        case 5: document.getElementById('screenshot').innerHTML = '<div><p>Cooker1:奶油，我記得奶油熔點好像滿低的<br>Partner:只要可以熔就好?<br>Cooker1:可以，對，就。只是溫度太高，奶油會焦掉<br>Partner:恩<br>(沉默)<br>Partner:你剛挖那奶油是隨意、隨意嗎?<br>Cooker1:恩<br>......</p></div>';break;
+        case 6: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/oil_pan.png" style="max-height: 180px; float: left; margin-right: 15px;"><img src="img/procedural/oil_pan_2.png" style="max-height: 180px;float: left; margin-right: 15px;"><div style="float: left;">Cooker2:幫我把奶油蓋上來。<br>Partner:奶油很香<br>Cooker2:恩，一定要確保他全部都有<br>Partner:全部熔化<br>Cooker2:也不用全部熔化，一定要確保他去沾到所有的鍋面，<br>Partner:所有的平面?<br>Cooker2:對<br>Partner:噢，因為你等下要整個...<br>Cooker2:翻過來，因為沒沾到的話就會燙，然後就會黏一層<br>Partner:噢，我知道蛋很難洗<br>Cooker2:也是還好，只是你做的歐姆蛋就會怪怪的<br>Partner:就會不知，不太像歐姆蛋<br>......</div></div>';break;
+        case 7: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/pour_egg.png" style="max-height: 180px;float: left; margin-right: 15px;"><p>然後等他平均分布之後我們就把蛋黃放下去，放下去之後呢，我們就要均勻的這個表面，這樣，表面大概放個，看到他底部有成形之後，<br>這個火又太小了，這樣，然後，然後讓他煎一下。<br>......</p></div>';break;
+        case 8: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/to_saute.png" style="max-height: 180px;float: left; margin-right: 15px;"><p>Cooker：我覺得好像太薄了。<br>Partner：其實可以把它擠在一起沒關係啊。<br>Cooker：因為它到最後可能要做得有點像蛋餅那樣子。<br>Partner：喔要翻對不對。<br>Cooker：對，所以我剛剛一直想要形狀把它固定，但是有一點難。<br>Partner：摁。<br>Cooker：突然覺得不知道怎麼翻欸，因為可能一翻它就破了。<br>Partner：可是好像也有人沒有翻，因為裡面好像沒有要加東西，其實就不用翻，就直接這樣子。<br>......</p></div>';break;
+        case 9: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/remove_from_fire.png" style="max-height: 180px;float: left; margin-right: 15px;"><p>好，那我們接下來就，準備一個盤子，<br>這個時候大概煎一分鐘，<br>其實你只要看到他上面這些東西，都沒有蛋黃都沒有在跑那就可以了，這樣其實蠻成功了<br>......</p></div>';break;
       }
     }
 
@@ -485,7 +475,7 @@
           </div>
         </div>
 
-        <div class="ui attached segment" id="screenshot">
+        <div class="ui attached segment" id="screenshot" style='max-height: 200px;overflow-y: scroll'>
         </div>     
       </div>
       <div class='row justify-content-md-center'>
@@ -498,21 +488,13 @@
       </div>
 
       <div id="test-modal" class="mfp-hide white-popup-block">
-        <div class="ui container">
-          <div class="column">
-            <p class="center" color="#ed916a" id="why">WHY</p>
-            <p class="center" color="#a784d8" id="how">HOW</p>
-            <p class="center" color="#4bddc7" id="what">WHAT</p>
-            <p class="center" color="#97e094" id="when">WHEN</p>
-            <p class="center" color="#d1c977" id="where">WHERE</p>
-            <p class="center" ><a href="https://coggle.it/diagram/WeR86QCBZAABLduF" target="_blank">
-            To Concept Map
-            </a></p>
-          </div>
+      	<div class="ui container" style="max-height: 600px">  
+      			<iframe src="" id="iframe" width="100%" height="100%"></iframe>
         </div>
+        
       </div>
       <style type="text/css">
-        .white-popup-block {
+        .black-popup-block {
           background: #FFF;
           padding: 20px 30px;
           text-align: left;]
@@ -521,8 +503,9 @@
           border-radius: 6px;
         }
       </style>
-    </div>
 
+    </div>
+    
   </div><!--pusher-->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
