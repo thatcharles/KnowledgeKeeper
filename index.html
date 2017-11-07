@@ -26,63 +26,63 @@
   </head>
   <script>
     $(document).ready(function(){
-      $('.ui.rating')
-      .rating({
-        initialRating: 3,
-        maxRating: 5
-      });
+      // $('.ui.rating')
+      // .rating({
+      //   initialRating: 3,
+      //   maxRating: 5
+      // });
 
-      var rate= ['poor data','few data','medium data','sufficient data','abundant data'];
+      // var rate= ['poor data','few data','medium data','sufficient data','abundant data'];
 
       
-      $.each($('#rating1 > i.icon'), function (index, item) {
-        $(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating1 > i.icon'), function (index, item) {
+      //   $(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating2 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating2 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating3 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating3 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating4 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating4 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating5 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating5 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating6 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating6 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating7 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating7 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating8 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating8 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating9 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating9 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating10 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });   
+      // $.each($('#rating10 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });   
 
-      $(document).on('mouseenter', '#rating1 > i.icon, #rating2 > i.icon, #rating3 > i.icon, #rating4 > i.icon, #rating5 > i.icon, #rating6 > i.icon, #rating7 > i.icon, #rating8 > i.icon, #rating9 > i.icon, #rating10 > i.icon', function() {
-        $(this)
-        .popup({
-         title: $(this).attr('data-ratetext'),
-         on:'hover'
-       })
-        .popup('show');
-      })
+      // $(document).on('mouseenter', '#rating1 > i.icon, #rating2 > i.icon, #rating3 > i.icon, #rating4 > i.icon, #rating5 > i.icon, #rating6 > i.icon, #rating7 > i.icon, #rating8 > i.icon, #rating9 > i.icon, #rating10 > i.icon', function() {
+      //   $(this)
+      //   .popup({
+      //    title: $(this).attr('data-ratetext'),
+      //    on:'hover'
+      //  })
+      //   .popup('show');
+      // })
 
 
 
@@ -443,7 +443,7 @@
       <div class='row' style='margin-top: 0px;'> <!-- delete height constraint after implementation ready -->
         <!-- display the main steps here -->
         <div class="ui top attached ordered steps" style='overflow-x: scroll'>
-          <div class="active step popup-modal" id="test1" href="#test-modal">
+          <div class="active step" id="test1" href="#test-modal">
             <div class="content">
               <div class="title">Get ready beforehand</div>
               <!-- Jean: '.rating' 的實作在rating.js，data-dating的用法我有保留，改數字即可改黃色chef icon的數量-->
@@ -451,55 +451,55 @@
               <!--div class="description">Choose your shipping options</div-->
             </div>
           </div>
-          <div class="step popup-modal" id="test2" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test2" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Heat the pot</div>
               <div class='rating' data-rating="2"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test3" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test3" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Beat the egg</div>
               <div class='rating' data-rating="3"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test4" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test4" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Add salt</div>
               <div class='rating' data-rating="4"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test5" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test5" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Add a spoon of butter</div>
               <div class='rating' data-rating="2"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test6" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test6" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">oil the pen</div>
               <div class='rating' data-rating="3"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test7" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test7" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Pour the egg</div>
               <div class='rating' data-rating="5"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test8" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test8" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">To saute</div>
               <div class='rating' data-rating="4"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test9" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test9" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Leave the pan from fire</div>
               <div class='rating' data-rating="3"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test10" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test10" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Put the omelette on the plate</div>
               <div class='rating' data-rating="2"></div>

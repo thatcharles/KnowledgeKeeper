@@ -8,6 +8,7 @@ $(document).ready(function(){
 		for(var i=value; i<5; i++){
 			$(this).append("<img class='icon-chef' src='./img/chef-grey.png'/>");
 		}
+		//tooltip
+		$(this).append("<div class='tooltip'>tooltip</div>");
 	})
-
 })
