@@ -15,6 +15,7 @@
   <link href="css/bootstrap-responsive.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="Semantic-UI-CSS/semantic.js"></script>
+  <script src="rating.js"></script>
   <!--script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js""></script-->
   <script type="text/javascript">
   	      function showFrame( url )
@@ -25,63 +26,63 @@
   </head>
   <script>
     $(document).ready(function(){
-      $('.ui.rating')
-      .rating({
-        initialRating: 3,
-        maxRating: 5
-      });
+      // $('.ui.rating')
+      // .rating({
+      //   initialRating: 3,
+      //   maxRating: 5
+      // });
 
-      var rate= ['poor data','few data','medium data','sufficient data','abundant data'];
+      // var rate= ['poor data','few data','medium data','sufficient data','abundant data'];
 
       
-      $.each($('#rating1 > i.icon'), function (index, item) {
-        $(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating1 > i.icon'), function (index, item) {
+      //   $(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating2 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating2 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating3 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating3 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating4 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating4 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating5 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating5 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating6 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating6 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating7 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating7 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating8 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating8 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating9 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });
+      // $.each($('#rating9 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });
 
-      $.each($('#rating10 > i.icon'), function (index, item) {
-      	$(item).attr('data-ratetext', rate[index]);
-      });   
+      // $.each($('#rating10 > i.icon'), function (index, item) {
+      // 	$(item).attr('data-ratetext', rate[index]);
+      // });   
 
-      $(document).on('mouseenter', '#rating1 > i.icon, #rating2 > i.icon, #rating3 > i.icon, #rating4 > i.icon, #rating5 > i.icon, #rating6 > i.icon, #rating7 > i.icon, #rating8 > i.icon, #rating9 > i.icon, #rating10 > i.icon', function() {
-        $(this)
-        .popup({
-         title: $(this).attr('data-ratetext'),
-         on:'hover'
-       })
-        .popup('show');
-      })
+      // $(document).on('mouseenter', '#rating1 > i.icon, #rating2 > i.icon, #rating3 > i.icon, #rating4 > i.icon, #rating5 > i.icon, #rating6 > i.icon, #rating7 > i.icon, #rating8 > i.icon, #rating9 > i.icon, #rating10 > i.icon', function() {
+      //   $(this)
+      //   .popup({
+      //    title: $(this).attr('data-ratetext'),
+      //    on:'hover'
+      //  })
+      //   .popup('show');
+      // })
 
 
 
@@ -180,46 +181,56 @@
         case '1': 
           setinfo('Before we cook an Omlette let\'s prepare',[1,1,1],[1,1,1]);
           setImage(1);
+          setText(1);
           break;
         case '2': 
           setinfo('what should we prepare for heatting the pot',[0,0,0],[0,0,0]);
           setImage(2);
+          setText(2);
           break;
         case '3': 
           setinfo('what should we prepare for beating the egg',[1,0,0],[1,0,0]);
           setImage(3);
+          setText(3);
           setVideo(3);
           break;
         case '4': 
           setinfo('what should we prepare for adding salt',[1,0,0],[0,1,0]);
           setImage(4);
+          setText(4);
           setVideo(4);
           break;
         case '5': 
           setinfo('what should we prepare for adding butter',[1,0,1],[0,0,1]);
           setImage(5);
+          setText(5);
           setVideo(5);
           break;
         case "6": 
           setinfo('what should we prepare for oiling the pan',[1,0,0],[0,0,0]);
           setImage(6);
+          setText(6);
           break;
         case "7": 
           setinfo('what should we prepare for pouring the egg',[1,1,1],[1,0,0]);
           setImage(7);
+          setText(7);
           setVideo(7);
           break;
         case "8": 
           setinfo('what should we prepare for sauting',[1,0,0],[1,1,0]);
           setImage(8);
+          setText(8);
           break;
         case "9": 
           setinfo('what should we prepare for leaving the pan from fire',[1,0,0],[1,1,1]);
           setImage(9);
+          setText(9);
           break;
         case "10": 
           setinfo('what should we prepare for plating the omelette',[1,0,1],[1,1,1]);
           setImage(10);
+          setText(10);
           break;
         default: '1';
       }
@@ -241,18 +252,43 @@
       }
     }
 
+    function setText(step){
+      document.getElementById('text').innerHTML = '';
+      switch(step){
+        case 1: document.getElementById('text').innerHTML = '<p class="setTextTitle">WHY:</p><p class="setText">Omelette:Its Chinese name is directly translated from English</p>';
+          break;
+        case 2: document.getElementById('text').innerHTML = '<p class="setTextTitle">HOW:</p><p class="setText">60C 100W</p><p class="setText">about 80 degree (medium heat).</p>';
+          break;
+        case 3: document.getElementById('text').innerHTML = '<p class="setTextTitle">HOW:</p><p class="setText">evenly mix two eggs in a bowl: WHY: if directly crack eggs into the pan will cause unevenly mixture of eggs</p><p class="setText">Mix it until yolks and whites blend evenly.: Use chopsticks to beat the egg</p><p class="setText">amaintain an angle to beat the eggs.</p><p class="setTextTitle">WHAT:</p><p class="setText">mixing mechine.</p><p class="setText">No special rules for selecting eggs</p><p class="setText">chapsticks</p><p class="setTextTitle">WHEN:</p><p class="setText">beat until you can\'t see the white.</p>';
+          break;
+        case 4: document.getElementById('text').innerHTML = '<p class="setTextTitle">HOW:</p><p class="setText">mix the salt into eggs evenly</p><p class="setTextTitle">WHAT:</p><p class="setText">mlittle amount of it</p><p class="setText">a tea spoon</p>';
+          break;
+        case 5: document.getElementById('text').innerHTML = '<p class="setTextTitle">WHY:</p><p class="setText">butter makes it have milk and heavier flavor.</p><p class="setTextTitle">HOW:</p><p class="setText">OR Add vegetable oil</p><p class="setTextTitle">WHAT:</p><p class="setText">Unsalted butter</p><p class="setText">Salted butter</p>';break;
+        case 6: document.getElementById('text').innerHTML = '<p>HOW:</p><p class="setText">stir the butter to let it cover all the pans</p><p class="setText">slightly use the spatula to stir it, making it evenly spread in the pan</p><p>WHEN:</p><p class="setText">stop when you see the butter turns red</p><p>WHAT: Oil:</p><p class="setText">Rapeseed oil (best): WHY: more healthy then blend oil under high temperature</p><p class="setText">liquid (prefered): WHY: easier to spread out</p><p class="setText">concrete (not recommend): WHY: have to stab to spread it out: may harm the pan</p>';
+          break;
+        case 7: document.getElementById('text').innerHTML = '<p>WHY:</p><p class="setText">key to the shape of omelett.</p><p>WHEN:</p><p class="setText">keep the actions for 30 secs to 1 mins</p><p>HOW:</p><p class="setText">keep stirring the eggs</p><p class="setText">do them at the same time: slowly pour mixed-egg from the pan-edge: slowly rotate the pan: no need  worrying about the spill</p><p class="setText">shake the pan</p><p class="setText">shake the pan: HOW: turn low er the heat: WHY: high temperature is hear to control, egg may stick on the pan:: WHY: evenly spread mixed-egg</p><p class="setText">HOW: temperature: 100 Celsius degree: This temperature will heat the egg fast: If the temperature is lower than 100 Celsius degree, then you have to wait longer</p>';
+          break;
+        case 8: document.getElementById('text').innerHTML = '<p>WHAT:</p><p class="setText">spatula</p><p>HOW:</p><p class="setText">stop moving the pan</p><p class="setText">Adjust the temperature: 100 Celsius degree might be too high...: Omelette can not be over cooked</p><p class="setText">Fold the egg: It makes the egg look like a typical omelette: It will blend some air with the egg while you fold it. It will taste more soft: it\'s okay to overlap the egg a little bit while flipping, so don\'t have to haste</p><p class="setText">shake the pan: HOW: turn low er the heat: WHY: high temperature is hear to control, egg may stick on the pan:: WHY: evenly spread mixed-egg</p><p class="setText">slightly stab on the surface, meanwhile wait the bottom to become concrete: want it in medium: surface with liquid mixed-egg: want it to be well-done: surface without liquid mix-egg.</p>';
+          break;
+        case 9: document.getElementById('text').innerHTML = '<p>WHY:</p><p class="setText">to prevent  omelette from being burnt.</p><p>WHAT:</p><p class="setText">Add tomato sauce.</p><p>WHEN:</p><p class="setText">after the surface started to pop bubbles.</p><p>HOW:</p><p class="setText">Use the remaining heat to heat the egg.</p>';
+          break;
+        case 10: document.getElementById('text').innerHTML = '<p>WHY:</p><p class="setText">salt: can be added if favor more harvest taste</p><p class="setText">spatula</p><p>HOW:</p><p class="setText">slide the omelette into bowl or plate</p><p class="setText">hold the pan and turn it to 3 o\'click direction</p><p class="setText">use spatula to slide the omelette out to the plate from the front of the pan</p>';
+          break;
+      }
+    }
+    // Jean:只改到case 5
     function setImage(step){
       document.getElementById('screenshot').innerHTML = '';
       switch(step)
       {
-        case 2: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/pre_heat.png" style="max-height: 180px; float: left; margin-right: 15px"><p>Partner:感覺不太出來他有沒有耶...要先等一下<br>Cooker:噢噢，這樣就有了<br>Cooker:好，等他有點熱的時候，但我都會等，<br>Partner:冒煙<br>Cooker:水有點滾...的時候，就把水蒸乾，之後再放油<br>Partner:噢，那現在看不出來有沒有水，你要怎麼判斷?<br>Cooker:怎麼判斷喔，就是等，一段時間後，然後放油下去，油會開始跑來跑去的時候，那就代表欸，溫度應該可以。<br>......</p></div>';break;
-        case 3: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/break_egg.png" style="max-height: 180px;float: left; margin-right: 15px;"><p>Partner:因為我是一個新手學習者，要打多久?<br>Cooker1:我是會打比較多一點，打比較多空氣進去，他會比較滑...<br>Partner:是噢<br>Cooker1:就有點像蛋白霜那種感覺，他的蛋白會變得比較綿密。<br>Partner:OK，那要同一個方向嗎，打的時候?<br>Cooker1:對。<br>Partner:要同一個方向<br>Cooker1:沒有啊，不同方向也是可以，可是就會很奇怪，就你順時鐘攪一攪突然逆時鐘<br>Partner:噢，OK、OK<br>......</p></div>';break;
-        case 4: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/add_salt.png" style="max-height: 180px;float: left; margin-right: 15px;"><p>Cooker:再撒一點鹽<br>(沉默)<br>Cooker:鹽巴我就...<br>Partner:看個人口味<br>Cooker:憑感覺，我也不知道耶<br>......</p></div>';break;
-        case 5: document.getElementById('screenshot').innerHTML = '<div><p>Cooker1:奶油，我記得奶油熔點好像滿低的<br>Partner:只要可以熔就好?<br>Cooker1:可以，對，就。只是溫度太高，奶油會焦掉<br>Partner:恩<br>(沉默)<br>Partner:你剛挖那奶油是隨意、隨意嗎?<br>Cooker1:恩<br>......</p></div>';break;
-        case 6: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/oil_pan.png" style="max-height: 180px; float: left; margin-right: 15px;"><img src="img/procedural/oil_pan_2.png" style="max-height: 180px;float: left; margin-right: 15px;"><div style="float: left;">Cooker2:幫我把奶油蓋上來。<br>Partner:奶油很香<br>Cooker2:恩，一定要確保他全部都有<br>Partner:全部熔化<br>Cooker2:也不用全部熔化，一定要確保他去沾到所有的鍋面，<br>Partner:所有的平面?<br>Cooker2:對<br>Partner:噢，因為你等下要整個...<br>Cooker2:翻過來，因為沒沾到的話就會燙，然後就會黏一層<br>Partner:噢，我知道蛋很難洗<br>Cooker2:也是還好，只是你做的歐姆蛋就會怪怪的<br>Partner:就會不知，不太像歐姆蛋<br>......</div></div>';break;
-        case 7: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/pour_egg.png" style="max-height: 180px;float: left; margin-right: 15px;"><p>然後等他平均分布之後我們就把蛋黃放下去，放下去之後呢，我們就要均勻的這個表面，這樣，表面大概放個，看到他底部有成形之後，<br>這個火又太小了，這樣，然後，然後讓他煎一下。<br>......</p></div>';break;
-        case 8: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/to_saute.png" style="max-height: 180px;float: left; margin-right: 15px;"><p>Cooker：我覺得好像太薄了。<br>Partner：其實可以把它擠在一起沒關係啊。<br>Cooker：因為它到最後可能要做得有點像蛋餅那樣子。<br>Partner：喔要翻對不對。<br>Cooker：對，所以我剛剛一直想要形狀把它固定，但是有一點難。<br>Partner：摁。<br>Cooker：突然覺得不知道怎麼翻欸，因為可能一翻它就破了。<br>Partner：可是好像也有人沒有翻，因為裡面好像沒有要加東西，其實就不用翻，就直接這樣子。<br>......</p></div>';break;
-        case 9: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/remove_from_fire.png" style="max-height: 180px;float: left; margin-right: 15px;"><p>好，那我們接下來就，準備一個盤子，<br>這個時候大概煎一分鐘，<br>其實你只要看到他上面這些東西，都沒有蛋黃都沒有在跑那就可以了，這樣其實蠻成功了<br>......</p></div>';break;
+        case 2: document.getElementById('screenshot').innerHTML = '<img src="img/procedural/pre_heat.png" style="height: 180px;">';break;
+        case 3: document.getElementById('screenshot').innerHTML = '<img src="img/procedural/break_egg.png" style="height: 180px;">';break;
+        case 4: document.getElementById('screenshot').innerHTML = '<img src="img/procedural/add_salt.png" style="height: 180px;">';break;
+        case 5: document.getElementById('screenshot').innerHTML = '';break;
+        case 6: document.getElementById('screenshot').innerHTML = '<img src="img/procedural/oil_pan.png" style="height: 180px; margin-right: 15px;"><img src="img/procedural/oil_pan_2.png" style="height:180">';break;
+        case 7: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/pour_egg.png" style="max-height: 180px;float: left; margin-right: 15px;"></div>';break;
+        case 8: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/to_saute.png" style="max-height: 180px;float: left; margin-right: 15px;"></div>';break;
+        case 9: document.getElementById('screenshot').innerHTML = '<div><img src="img/procedural/remove_from_fire.png" style="max-height: 180px;float: left;"></div>';break;
       }
     }
 
@@ -260,6 +296,11 @@
         commands(step,0);
     }
   </script>
+  <style type="text/css">
+        .setText {
+          text-indent:25px;
+        }
+      </style>
   <script>
     /*
     * use .on to set a custom event and wich function to do
@@ -412,71 +453,74 @@
       <div class='row' style='margin-top: 0px;'> <!-- delete height constraint after implementation ready -->
         <!-- display the main steps here -->
         <div class="ui top attached ordered steps" style='overflow-x: scroll'>
-          <div class="active step popup-modal" id="test1" href="#test-modal">
+          <div class="active step" id="test1" href="#test-modal">
             <div class="content">
               <div class="title">Get ready beforehand</div>
-              <div class="ui star rating" id="rating1" data-rating="4"></div>
+              <!-- Jean: '.rating' 的實作在rating.js，data-dating的用法我有保留，改數字即可改黃色chef icon的數量-->
+              <div class='rating' data-rating="4"></div>
               <!--div class="description">Choose your shipping options</div-->
             </div>
           </div>
-          <div class="step popup-modal" id="test2" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test2" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Heat the pot</div>
-              <div class="ui star rating" id="rating2" data-rating="2"></div>
+              <div class='rating' data-rating="2"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test3" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test3" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Beat the egg</div>
-              <div class="ui star rating" id="rating3" data-rating="3"></div>
+              <div class='rating' data-rating="3"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test4" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test4" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Add salt</div>
-              <div class="ui star rating" id="rating4" data-rating="4"></div>
+              <div class='rating' data-rating="4"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test5" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test5" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Add a spoon of butter</div>
-              <div class="ui star rating" id="rating5" data-rating="2"></div>
+              <div class='rating' data-rating="2"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test6" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test6" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">oil the pen</div>
-              <div class="ui star rating" id="rating6" data-rating="3"></div>
+              <div class='rating' data-rating="3"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test7" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test7" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Pour the egg</div>
-              <div class="ui star rating" id="rating7" data-rating="5"></div>
+              <div class='rating' data-rating="5"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test8" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test8" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">To saute</div>
-              <div class="ui star rating" id="rating8" data-rating="4"></div>
+              <div class='rating' data-rating="4"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test9" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test9" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Leave the pan from fire</div>
-              <div class="ui star rating" id="rating9" data-rating="3"></div>
+              <div class='rating' data-rating="3"></div>
             </div>
           </div>
-          <div class="step popup-modal" id="test10" href="#test-modal" style='height: 100px'>
+          <div class="step" id="test10" href="#test-modal" style='height: 100px'>
             <div class="content">
               <div class="title">Put the omelette on the plate</div>
-              <div class="ui star rating" id="rating10" data-rating="2"></div>
+              <div class='rating' data-rating="2"></div>
             </div>
           </div>
         </div>
-
-        <div class="ui attached segment" id="screenshot" style='max-height: 200px;overflow-y: scroll'>
-        </div>     
+        <!-- Jean:我把screnshot跟文字分開，function:setImage拆成setImage和setText -->
+        <div class="ui attached segment" style='display:flex; max-height: 200px;overflow-y: scroll'>
+          <div id='screenshot'  style='flex:1'></div>
+          <div id='text' style='flex:1'><p class="setTextTitle">WHY:</p><p class="setText">Omelette:Its Chinese name is directly translated from English</p></div>
+        </div>    
       </div>
       <div class='row justify-content-md-center'>
         <div class='column'>
