@@ -13,7 +13,7 @@
 	width:100px;
 }
 /* Tooltip text */
-.tooltip{
+#tooltip{
     visibility: hidden;
     width: 120px;
     background-color: #555;
@@ -23,19 +23,17 @@
     border-radius: 6px;
 
     /* Position the tooltip text */
-    position: relative;
+    position: absolute;
     z-index: 1;
-    bottom: 40px;
-    left: 50%;
     margin-left: -60px;
 
     /* Fade in tooltip */
-    opacity: 0;
-    transition: opacity 1s;
+    /*opacity: 0;
+    transition: opacity 1s;*/
 }
 
 /* Tooltip arrow */
-.tooltip::after {
+#tooltip::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -46,11 +44,11 @@
     border-color: #555 transparent transparent transparent;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
+ /*Show the tooltip text when you mouse over the tooltip container 
 .rating:hover .tooltip {
     visibility: visible;
     opacity: 1;
-}
+}*/
 body{
 	font-family: 'Source Sans Pro', sans-serif;
 }
