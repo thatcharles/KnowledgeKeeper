@@ -26,66 +26,6 @@
   </head>
   <script>
     $(document).ready(function(){
-      // $('.ui.rating')
-      // .rating({
-      //   initialRating: 3,
-      //   maxRating: 5
-      // });
-
-      // var rate= ['poor data','few data','medium data','sufficient data','abundant data'];
-
-      
-      // $.each($('#rating1 > i.icon'), function (index, item) {
-      //   $(item).attr('data-ratetext', rate[index]);
-      // });
-
-      // $.each($('#rating2 > i.icon'), function (index, item) {
-      // 	$(item).attr('data-ratetext', rate[index]);
-      // });
-
-      // $.each($('#rating3 > i.icon'), function (index, item) {
-      // 	$(item).attr('data-ratetext', rate[index]);
-      // });
-
-      // $.each($('#rating4 > i.icon'), function (index, item) {
-      // 	$(item).attr('data-ratetext', rate[index]);
-      // });
-
-      // $.each($('#rating5 > i.icon'), function (index, item) {
-      // 	$(item).attr('data-ratetext', rate[index]);
-      // });
-
-      // $.each($('#rating6 > i.icon'), function (index, item) {
-      // 	$(item).attr('data-ratetext', rate[index]);
-      // });
-
-      // $.each($('#rating7 > i.icon'), function (index, item) {
-      // 	$(item).attr('data-ratetext', rate[index]);
-      // });
-
-      // $.each($('#rating8 > i.icon'), function (index, item) {
-      // 	$(item).attr('data-ratetext', rate[index]);
-      // });
-
-      // $.each($('#rating9 > i.icon'), function (index, item) {
-      // 	$(item).attr('data-ratetext', rate[index]);
-      // });
-
-      // $.each($('#rating10 > i.icon'), function (index, item) {
-      // 	$(item).attr('data-ratetext', rate[index]);
-      // });   
-
-      // $(document).on('mouseenter', '#rating1 > i.icon, #rating2 > i.icon, #rating3 > i.icon, #rating4 > i.icon, #rating5 > i.icon, #rating6 > i.icon, #rating7 > i.icon, #rating8 > i.icon, #rating9 > i.icon, #rating10 > i.icon', function() {
-      //   $(this)
-      //   .popup({
-      //    title: $(this).attr('data-ratetext'),
-      //    on:'hover'
-      //  })
-      //   .popup('show');
-      // })
-
-
-
  	  
       $('.popup-modal').click(function() {
 
@@ -532,13 +472,26 @@
       </div>
 
       <div id="test-modal" class="mfp-hide white-popup-block">
-      	<div class="ui container" style="max-height: 600px">  
-      			<iframe src="" id="iframe" width="100%" height="100%"></iframe>
+      	<div class="ui container" style="max-height: 300px"> 
+      		<div id="dropbox">
+      			<p><img src='./img/videos.png'/>&nbsp;&nbsp;&nbsp;&nbsp;<img src='./img/pictures.png'/></p>
+      			<p> Drop image here or click to upload</p>
+      		</div>
+      	</div>
+      	<div class="ui container" style="max-height: 300px"> 
+      		<iframe src="" id="iframe" width="100%" height="100%"></iframe>
         </div>
         
       </div>
       <!-- Jean:Tooltip -->
-      <div id='tooltip'>tooltip </br> tooltip </br> bx </br></br> tooltip </br> bx</div>
+      <div id='tooltip'>
+      	1<img class='icon-chef' src='./img/chef-yellow.png'/>:we only have limited data for you, need your support!<br>
+      	2<img class='icon-chef' src='./img/chef-yellow.png'/>:we have few data, still need some more to make this better!<br>
+      	3<img class='icon-chef' src='./img/chef-yellow.png'/>:this step is supported by medium data, the more the better!<br>
+      	4<img class='icon-chef' src='./img/chef-yellow.png'/>:this step is supported by quite a few data, trust us or give more!<br>
+      	5<img class='icon-chef' src='./img/chef-yellow.png'/>:this step is supported by abundant data, you can rely on us!<br>
+      	<button class="popup-modal" href="#test-modal" style="background: transparent;border: none;"><img class='icon-chef' src='./img/chef-yellow.png'/><img class='icon-chef' src='./img/chef-yellow.png'/><img class='icon-chef' src='./img/chef-yellow.png'/><b style="color: yellow"> I want to support!</b></button>
+      </div>
       <style type="text/css">
         .black-popup-block {
           background: #FFF;
@@ -551,6 +504,7 @@
       </style>
 
     </div>
+
     
   </div><!--pusher-->
 
