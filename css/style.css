@@ -18,7 +18,30 @@
     text-indent:25px;
     line-height:1px; 
 }
-
+#question-btn{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width:120px;
+    height:100px;
+    border-radius:30px;
+    z-index: 2;
+    text-decoration:none;
+    border:none;
+    background-color: transparent;
+    /*background-image: url("../img/question.png");*/
+}
+#question-btn:hover{
+    text-decoration:none;
+    opacity: 0.6;
+   /* background-image: url("../img/question.png");*/
+}
+#question-btn-img{
+    width: 50px;
+}
+#question-btn:focus{
+    outline:0;
+}
 #tooltip{
     visibility: hidden;
     width: 300px;
