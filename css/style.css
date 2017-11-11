@@ -85,11 +85,11 @@ body{
 /* popup */
 .black-popup-block {
   background: #FFF;
-  padding: 20px 30px;
   text-align: left;]
   margin: 40px auto;
   position: relative;
   border-radius: 6px;
+  height: 700px
 }
 /* dropbox in the popup*/
 #dropbox {
