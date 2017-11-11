@@ -13,7 +13,7 @@ $(document).ready(function(){
 	$('.rating').mouseenter(function(){
 		count++;
 		var position = $(this).offset();
-		var height = 135; //set tooltip's height here
+		var height = 95; //set tooltip's height here
 		var top = position.top-height
 		$('#tooltip').offset({top:top,left:position.left})
 		$('#tooltip').css('visibility', 'visible')
